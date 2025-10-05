@@ -186,6 +186,63 @@ class Potentials extends CRMEntity {
 
 	}
 
+	function get_accounts($id, $cur_tab_id, $rel_tab_id, $actions = false) {
+    global $log, $singlepane_view, $currentModule;
+    $log->debug("Entering get_accounts(".$id.") method ...");
+    $this_module = $currentModule;
+
+    $related_module = vtlib_getModuleNameById($rel_tab_id);
+    require_once("modules/$related_module/$related_module.php");
+    $other = new $related_module();
+
+    vtlib_setup_modulevars($related_module, $other);
+    $singular_modname = vtlib_toSingular($related_module);
+    $parenttab = getParentTab();
+
+    if ($singlepane_view == 'true') {
+        $returnset = '&return_module='.$this_module.'&return_action=DetailView&return_id='.$id;
+    } else {
+        $returnset = '&return_module='.$this_module.'&return_action=CallRelatedList&return_id='.$id;
+    }
+
+    $button = '';
+
+    // Action buttons (optional)
+    if ($actions) {
+        if (is_string($actions)) $actions = explode(',', strtoupper($actions));
+        if (in_array('SELECT', $actions) && isPermitted($related_module,4,'') == 'yes') {
+            $button .= "<input title='".getTranslatedString('LBL_SELECT')." ". getTranslatedString($related_module). "' class='crmbutton small edit' type='button' onclick=\"return window.open('index.php?module=$related_module&return_module=$currentModule&action=Popup&popuptype=detailview&select=enable&form=EditView&form_submit=false&recordid=$id&parenttab=$parenttab','test','width=640,height=602,resizable=0,scrollbars=0');\" value='". getTranslatedString('LBL_SELECT'). " " . getTranslatedString($related_module) ."'>";
+        }
+    }
+
+    $userNameSql = getSqlForNameInDisplayFormat(
+        array('first_name'=>'vtiger_users.first_name', 'last_name'=>'vtiger_users.last_name'), 
+        'Users'
+    );
+
+    // ✅ Correct query for Potentials → Accounts relation
+    $query = "SELECT vtiger_account.accountid, vtiger_account.accountname, vtiger_account.phone,
+                     vtiger_account.website, vtiger_account.email1,
+                     vtiger_crmentity.crmid, vtiger_crmentity.smownerid, vtiger_crmentity.modifiedtime,
+                     CASE WHEN (vtiger_users.user_name != '') THEN $userNameSql ELSE vtiger_groups.groupname END AS user_name
+              FROM vtiger_account
+              INNER JOIN vtiger_crmentity ON vtiger_crmentity.crmid = vtiger_account.accountid
+              INNER JOIN vtiger_potential ON vtiger_potential.related_to = vtiger_account.accountid
+              LEFT JOIN vtiger_users ON vtiger_crmentity.smownerid = vtiger_users.id
+              LEFT JOIN vtiger_groups ON vtiger_groups.groupid = vtiger_crmentity.smownerid
+              WHERE vtiger_potential.potentialid = $id AND vtiger_crmentity.deleted = 0";
+
+    // Return in standard format
+    $return_value = GetRelatedList($this_module, $related_module, $other, $query, $button, $returnset);
+
+    if ($return_value == null) $return_value = array();
+    $return_value['CUSTOM_BUTTON'] = $button;
+
+    $log->debug("Exiting get_accounts method ...");
+    return $return_value;
+}
+
+
 
 
 	/** Returns a list of the associated contacts

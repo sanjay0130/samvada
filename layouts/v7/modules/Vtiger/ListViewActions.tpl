@@ -27,19 +27,19 @@
         <div class = "row">
             <div class=" col-md-3">
             <div class="btn-group listViewActionsContainer" role="group" aria-label="...">
-                {if $editAction}
+                {if isset($editAction) && $editAction}
                     <button type="button" class="btn btn-default" id={$MODULE}_listView_massAction_{$editAction->getLabel()} 
                             {if stripos($editAction->getUrl(), 'javascript:')===0} href="javascript:void(0);" onclick='{$editAction->getUrl()|substr:strlen("javascript:")}'{else} href='{$editAction->getUrl()}' {/if} title="{vtranslate('LBL_EDIT', $MODULE)}" disabled="disabled">
                         <i class="fa fa-pencil"></i>
                     </button>
                 {/if}
-                {if $deleteAction}
+                {if isset($deleteAction) && $deleteAction}
                     <button type="button" class="btn btn-default" id={$MODULE}_listView_massAction_{$deleteAction->getLabel()} 
                             {if stripos($deleteAction->getUrl(), 'javascript:')===0} href="javascript:void(0);" onclick='{$deleteAction->getUrl()|substr:strlen("javascript:")}'{else} href='{$deleteAction->getUrl()}' {/if} title="{vtranslate('LBL_DELETE', $MODULE)}" disabled="disabled">
                         <i class="fa fa-trash"></i>
                     </button>
                 {/if}
-                {if $commentAction}
+                {if isset($commentAction) && $commentAction}
                     <button type="button" class="btn btn-default" id="{$MODULE}_listView_massAction_{$commentAction->getLabel()}" 
                             onclick="Vtiger_List_Js.triggerMassAction('{$commentAction->getUrl()}')" title="{vtranslate('LBL_COMMENT', $MODULE)}" disabled="disabled">
                         <i class="fa fa-comment"></i>
@@ -98,7 +98,7 @@
                             {if $PRINT_TEMPLATE}
                                 <li class="hide"><a id="{$MODULE}_listView_advancedAction_{Vtiger_Util_Helper::replaceSpaceWithUnderScores($PRINT_TEMPLATE->getLabel())}" {if stripos($PRINT_TEMPLATE->getUrl(), 'javascript:')===0} href="javascript:void(0);" onclick='{$PRINT_TEMPLATE->getUrl()|substr:strlen("javascript:")};'{else} href='{$PRINT_TEMPLATE->getUrl()}' {/if}>{vtranslate($PRINT_TEMPLATE->getLabel(), $MODULE)}</a></li>
                             {/if}
-                            {if $FIND_DUPLICATES_EXISTS}
+                            {if isset($FIND_DUPLICATES_EXISTS) && $FIND_DUPLICATES_EXISTS}
                                 <li class="hide"><a id="{$MODULE}_listView_advancedAction_MERGE_RECORD"  href="javascript:void(0);" onclick='Vtiger_List_Js.triggerMergeRecord()'>{vtranslate('LBL_MERGE_SELECTED_RECORDS', $MODULE)}</a></li>
                             {/if}
                             {foreach item=LISTVIEW_ADVANCEDACTIONS from=$LISTVIEW_LINKS['LISTVIEW']}

@@ -41,6 +41,8 @@ class Vtiger_MailRecord {
 	var $_htmlmessage = false;
 	// ATTACHMENTS list of the email
 	var $_attachments = false;
+	// INLINE ATTACHMENTS list of the email
+	var $_inline_attachments = false;
 	// UNIQUEID associated with the email
 	var $_uniqueid = false;
 
@@ -161,7 +163,7 @@ class Vtiger_MailRecord {
 	static function __mime_decode($input, &$words=null, $targetEncoding='UTF-8') {
 		if(is_null($words)) $words = array();
 		$returnvalue = $input;
-		
+		if(is_null($input)) $input = '';
 		preg_match_all('/=\?([^\?]+)\?([^\?]+)\?([^\?]+)\?=/', $input, $matches);
                 if($matches) array_filter($matches);
                 if(php7_count($matches[0])>0){
@@ -218,14 +220,15 @@ class Vtiger_MailRecord {
 		$this->_uniqueid = $mailheader->message_id;
 
 		$this->_from = $this->__getEmailIdList($mailheader->from);
-                $this->_fromname = self::__mime_decode($mailheader->from[0]->personal);
-		$this->_to   = $this->__getEmailIdList($mailheader->to);
-		$this->_cc   = $this->__getEmailIdList($mailheader->cc);
-		$this->_bcc  = $this->__getEmailIdList($mailheader->bcc);
+		$this->_fromname = property_exists($mailheader->from[0], 'personal') ? self::__mime_decode($mailheader->from[0]->personal) : '';
+
+		$this->_to = property_exists($mailheader, 'to') ? $this->__getEmailIdList($mailheader->to) : array();
+		$this->_cc = property_exists($mailheader, 'cc') ? $this->__getEmailIdList($mailheader->cc) : array();
+		$this->_bcc = property_exists($mailheader, 'bcc') ? $this->__getEmailIdList($mailheader->bcc) : array();
 
 		$this->_date = $mailheader->udate;
 
-		$this->_subject = self::__mime_decode($mailheader->subject);
+		$this->_subject = property_exists($mailheader, 'subject') ? self::__mime_decode($mailheader->subject) : '';
 		if(!$this->_subject) $this->_subject = 'Untitled';
 	}
 	// Modified: http://in2.php.net/manual/en/function.imap-fetchstructure.php#85685
@@ -237,7 +240,7 @@ class Vtiger_MailRecord {
 		$this->_body = '';
 		$this->_isbodyhtml = false;
 
-		if($structure->parts) { /* multipart */
+		if(property_exists($structure, 'parts') && is_array($structure->parts)) { /* multipart */
 			foreach($structure->parts as $partno0=>$p) {
 				$this->__getpart($imap, $messageid, $p, $partno0+1);
 			}
@@ -291,14 +294,14 @@ class Vtiger_MailRecord {
 	    if ($p->parameters) {
 			foreach ($p->parameters as $x) $params[ strtolower( $x->attribute ) ] = $x->value;
 		}
-	    if ($p->dparameters) {
+	    if (property_exists($p,'dparameters') && $p->dparameters) {
 			foreach ($p->dparameters as $x) $params[ strtolower( $x->attribute ) ] = $x->value;
 		}
 
 	    // ATTACHMENT
     	// Any part with a filename is an attachment,
 	    // so an attached text file (type 0) is not mistaken as the message.
-    	if ($params['filename'] || $params['name']) {
+    	if ((isset($params['filename']) && $params['filename']) || (isset($params['name']) && $params['name'])) {
         	// filename may be given as 'Filename' or 'Name' or both
 	        $filename = ($params['filename'])? $params['filename'] : $params['name'];
 			// filename may be encoded, so see imap_mime_header_decode()
@@ -327,7 +330,7 @@ class Vtiger_MailRecord {
 	    }
 
     	// SUBPART RECURSION
-	    if ($p->parts) {
+	    if (property_exists($p,'parts') && $p->parts) {
         	foreach ($p->parts as $partno0=>$p2)
             	$this->__getpart($imap,$messageid,$p2,$partno.'.'.($partno0+1));  // 1.2, 1.2.1, etc.
     	}

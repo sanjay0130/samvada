@@ -39,7 +39,7 @@
 		}
 
 		static function filterAndSanitize($row,$meta){
-			$recordLabel = $row['label'];
+			$recordLabel = isset($row['label']) ? $row['label'] :"";
 			$row = DataTransform::filterAllColumns($row,$meta);
 			$row = DataTransform::sanitizeData($row,$meta);
 			if(!empty($recordLabel)){
@@ -103,7 +103,7 @@
 			}
 			$references = $meta->getReferenceFieldDetails();
 			foreach($references as $field=>$typeList){
-				if(strpos($row[$field],'x')!==false){
+				if(isset($row[$field]) && strpos($row[$field],'x')!==false){
 					$row[$field] = vtws_getIdComponents($row[$field]);
 					$row[$field] = $row[$field][1];
 				}
@@ -130,7 +130,7 @@
 					}
 				}
 			}
-			if($row["id"]){
+			if(isset($row["id"]) && $row["id"]){
 				unset($row["id"]);
 			}
 			if(isset($row[$meta->getObectIndexColumn()])){
@@ -139,6 +139,7 @@
 
 			$row = DataTransform::sanitizeDateFieldsForInsert($row,$meta);
 			$row = DataTransform::sanitizeCurrencyFieldsForInsert($row,$meta);
+			$row = DataTransform::sanitizeStringFields($row,$meta);
 
 			// New field added to store Source of Created Record
 			if (!isset($row['source'])) {
@@ -156,7 +157,7 @@
 			$allFields = $meta->getFieldColumnMapping();
 			$newRow = array();
 			foreach($allFields as $field=>$col){
-				$newRow[$field] = $row[$field];
+				$newRow[$field] = isset($row[$field]) ? $row[$field] : null;
 			}
 			if(isset($row[$recordString])){
 				$newRow[$recordString] = $row[$recordString];
@@ -187,7 +188,7 @@
 			}
 
 			if(!isset($row['id'])){
-				if($row[$meta->getObectIndexColumn()] ){
+				if(isset($row[$meta->getObectIndexColumn()] )){
 					$row['id'] = vtws_getId($meta->getEntityId(),$row[$meta->getObectIndexColumn()]);
 				}else{
 					//TODO Handle this.
@@ -198,7 +199,7 @@
 			}
 
 			foreach ($row as $field => $value) {
-				$row[$field] = html_entity_decode($value, ENT_QUOTES, $default_charset);
+				$row[$field] = $value ? html_entity_decode($value, ENT_QUOTES, $default_charset) : $value;
 			}
 			return $row;
 		}
@@ -211,11 +212,11 @@
 					continue;
 				}
 				if(strtolower($meta->getEntityName()) == "emails"){
-					if(isset($row['parent_id'])){
+					if (isset($row['parent_id']) && $row['parent_id'] !== null && strpos($row['parent_id'], '@') !== false) {					
 						list($row['parent_id'], $fieldId) = explode('@', $row['parent_id']);
 					}
 				}
-				if($row[$field]){
+				if(isset($row[$field]) && $row[$field]){
 					$found = false;
 					foreach ($typeList as $entity) {
 						$webserviceObject = VtigerWebserviceObject::fromName($adb,$entity);
@@ -273,7 +274,7 @@
             foreach ($moduleFields as $fieldName => $fieldObj) {
                 if (in_array($fieldObj->getUIType(), $supportedUITypes)) {
                     //while doing retrieve operation we have record_id and on query operation we have id.
-                    $id = $row['record_id'] ? $row['record_id'] : $row['id'];
+                    $id = isset($row['record_id']) ? $row['record_id'] : (isset($row['id']) ? $row['id'] : null);
                     $ids = Vtiger_Functions::getAttachmentIds($id, $meta->getEntityId());
                 if($ids) {
                         foreach($ids as $id){
@@ -315,7 +316,7 @@
 							$row[$fieldName."_raw"] = $row[$fieldName];
 							$row[$fieldName] = CurrencyField::convertToUserFormat($row[$fieldName],$current_user);
 						} else if($fieldObj->getUIType() == '72') {
-							$currencyConversionRate = $row['conversion_rate'];
+							$currencyConversionRate = isset($row['conversion_rate']) ? $row['conversion_rate'] : 0;
 							if (!empty($currencyConversionRate)) {
 								$rawBaseCurrencyValue = CurrencyField::convertToDollar($row[$fieldName], $currencyConversionRate);
 								$row[$fieldName."_raw"] = $rawBaseCurrencyValue;
@@ -327,6 +328,17 @@
 						$row[$fieldName] = CurrencyField::convertToUserFormat($row[$fieldName],$current_user,true);
 					} else if($fieldObj->getUIType() == 1 && in_array($fieldObj->getFieldType(), array('N', 'NN')) && in_array($fieldObj->getFieldName(), array('qty_per_unit', 'qtyinstock'))) {
 						$row[$fieldName] = CurrencyField::convertToUserFormat($row[$fieldName],$current_user,true);
+					}
+				}
+			}
+			return $row;
+		}
+
+		static function sanitizeStringFields($row,$meta){
+			if(in_array($meta->getEntityName(),array('Groups', 'Currency', 'Tax', 'ProductTaxes'))){
+				foreach ($row as $field => $value) {
+					if(is_string($value)){
+						$row[$field] = vtlib_purify($value);
 					}
 				}
 			}

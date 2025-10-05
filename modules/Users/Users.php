@@ -123,6 +123,8 @@ class Users extends CRMEntity {
 	var $record_id;
 	var $new_schema = true;
 
+	public $moduleName;
+
 	var $DEFAULT_PASSWORD_CRYPT_TYPE; //'BLOWFISH', /* before PHP5.3*/ MD5;
 
 	//Default Widgests
@@ -1725,7 +1727,7 @@ class Users extends CRMEntity {
 			foreach($fieldInstances as $blockInstance) {
 				foreach($blockInstance as $fieldInstance) {
 					$fieldName = $fieldInstance->getName();
-					$fieldValue = $data[$fieldName];
+					$fieldValue = isset($data[$fieldName]) ? $data[$fieldName] : '';
 					$dataType = $fieldInstance->getFieldDataType();
 					if($fieldInstance->isMandatory()) {
 						$mandatoryFields[] = $fieldName;
@@ -1767,7 +1769,7 @@ class Users extends CRMEntity {
 							unset($currencyId);
 					} else if($fieldName == 'language') {
 						foreach($allLanguages as $langKey => $langName) {
-							if(strtolower($fieldValue) == strtolower($langKey) || strtolower($fieldValue) == strtolower($langName)) {
+							if(strtolower($fieldValue ? $fieldValue : "") == strtolower($langKey ? $langKey : "") || strtolower($fieldValue ? $fieldValue : "") == strtolower($langName ? $langName : "")) {
 								$lang = $langKey;
 								break;
 							}
@@ -1781,8 +1783,8 @@ class Users extends CRMEntity {
 						$allUsers = Users_Record_Model::getAll();
 						$reportsTo = null;
 						foreach($allUsers as $user) {
-							$userName = strtolower($user->get('user_name'));
-							$firstLastName = strtolower($user->get('userlabel'));
+							$userName = strtolower($user->get('user_name') ? $user->get('user_name') : "");
+							$firstLastName = strtolower($user->get('userlabel') ? $user->get('userlabel') : "");
 							if(strtolower($fieldValue) == $userName || strtolower($fieldValue) == $firstLastName) {
 								$reportsTo = $user->getId();
 								break;
@@ -1795,7 +1797,7 @@ class Users extends CRMEntity {
 						$picklistValues = $fieldInstance->getPicklistValues();
 						$emptyValuedPicklistFields = array('defaulteventstatus', 'defaultactivitytype', 'reminder_interval');
 						foreach($picklistValues as $picklistKey => $picklistValue) {
-							if(strtolower($fieldValue) == strtolower($picklistKey) || strtolower($fieldValue) == strtolower($picklistValue)) {
+							if(strtolower($fieldValue) == strtolower($picklistKey) || strtolower($fieldValue) == strtolower($picklistValue ? $picklistValue : "")) {
 								$selectedValue = $picklistKey;
 								break;
 							}
@@ -1843,7 +1845,7 @@ class Users extends CRMEntity {
 				$modelData = $recordModel->getData();
 				$recordModel->set('mode', '');
 				foreach($modelData as $fieldName => $fieldValue) {
-					$recordModel->set($fieldName, $record[$fieldName]);
+					$recordModel->set($fieldName, isset($record[$fieldName]) ? $record[$fieldName] : null);
 				}
 				$recordModel->save();
 				$plainPasswords[$recordModel->getId()] = $record['user_password'];

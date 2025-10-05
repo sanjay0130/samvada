@@ -107,8 +107,10 @@ class Settings_Currency_Record_Model extends Settings_Vtiger_Record_Model{
             $instance = new self();
             $row = $db->query_result_rowdata($result,0);
             $instance->setData($row);
+            return $instance;
         }
-        return $instance;
+	return null;
+        
     }
     
     public static function getAllNonMapped($includedIds = array()) {

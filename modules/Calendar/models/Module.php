@@ -58,6 +58,14 @@ class Calendar_Module_Model extends Vtiger_Module_Model {
 	}
 
 	/**
+	 * Function to check whether to allow excel like grid edit.
+	 * Disabled as there are more dependent fields.
+	 */
+	public function isExcelEditAllowed() {
+		return false;
+	}
+
+	/**
 	 * Function returns the URL for creating Events
 	 * @return <String>
 	 */
@@ -82,7 +90,7 @@ class Calendar_Module_Model extends Vtiger_Module_Model {
 		$recordInstance = parent::getRecordFromArray($valueArray, $rawData);
 		$recordInstance->setData($valueArray)->setModuleFromInstance($this)->setRawData($rawData);
 		// added to fix picklist colorizer issue, list page not showing color for records
-		if ($rawData['status'] && empty($rawData['taskstatus'])) {
+		if (isset($rawData['status']) && $rawData['status'] && empty($rawData['taskstatus'])) {
 			$recordInstance->rawData['taskstatus'] = $recordInstance->rawData['status'];
 		}
 
@@ -761,7 +769,7 @@ class Calendar_Module_Model extends Vtiger_Module_Model {
 		return $recentRecords;
 	}
 
-	public function getAllTasksbyPriority($conditions = false, $pagingModel) {
+	public function getAllTasksbyPriority($conditions = false, $pagingModel = false) {
 		global $current_user;
 		$currentUserModel = Users_Record_Model::getCurrentUserModel();
 		$db = PearDatabase::getInstance();
@@ -849,7 +857,7 @@ class Calendar_Module_Model extends Vtiger_Module_Model {
 			}
 		}
 
-		if(php7_count($tasks[$priority]) > $pageLimit){
+		if(isset($priority) && isset($tasks[$priority]) && php7_count($tasks[$priority]) > $pageLimit){
 			array_pop($tasks[$priority]);
 			$pagingModel->set('nextPageExists', true);
 		}else{
@@ -1009,7 +1017,7 @@ class Calendar_Module_Model extends Vtiger_Module_Model {
 			}
 		}
 
-		$activityType = strtolower($activityType);
+		$activityType = strtolower($activityType ? $activityType : "");
 		$moduleIcon = "<i class='vicon-$activityType' title='$title' ></i>";
 
 		if (!in_array($activityType, array('task', 'calendar'))) {

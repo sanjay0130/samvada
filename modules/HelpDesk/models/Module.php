@@ -99,6 +99,7 @@ class HelpDesk_Module_Model extends Vtiger_Module_Model {
 		}
 
 		$params = array();
+		$dateFilterSql = '';
 		if(!empty($dateFilter)) {
 			$dateFilterSql = ' AND createdtime BETWEEN ? AND ? ';
 			//appended time frame and converted to db time zone in showwidget.php
@@ -220,7 +221,7 @@ class HelpDesk_Module_Model extends Vtiger_Module_Model {
 		if(php7_count($relatedListFields)>0) {
 			$nameFields = $this->getNameFields();
 			foreach($nameFields as $fieldName){
-				if(!$relatedListFields[$fieldName]) {
+				if(!isset($relatedListFields[$fieldName])) {
 					$fieldModel = $this->getField($fieldName);
 					$relatedListFields[$fieldModel->get('column')] = $fieldModel->get('name');
 				}

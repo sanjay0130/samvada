@@ -55,15 +55,21 @@ class MailManager_Connector_Connector {
 	 * @returns MailManager_Connector Object
 	 */
 	public static function connectorWithModel($model, $folder='') {
+		$server = $model->server();
 		$port = 143; // IMAP
 		if (strcasecmp($model->protocol(), 'pop') === 0) $port = 110; // NOT IMPLEMENTED
 		else if (strcasecmp($model->ssltype(), 'ssl') === 0) $port = 993; // IMAP SSL
 
-		$url = sprintf('{%s:%s/%s/%s/%s}%s', $model->server(), $port, $model->protocol(),
+		// use custom port if specified.
+		if (stripos($server, ":") !== false) {
+			list($server, $port) = explode(":", $server);
+		}
+
+		$url = sprintf('{%s:%s/%s/%s/%s}%s', $server, $port, $model->protocol(),
 				$model->ssltype(), $model->certvalidate(), $folder);
-		$baseUrl = sprintf('{%s:%s/%s/%s/%s}', $model->server(), $port, $model->protocol(),
+		$baseUrl = sprintf('{%s:%s/%s/%s/%s}', $server, $port, $model->protocol(),
 				$model->ssltype(), $model->certvalidate());
-		return new self($url, $model->username(), $model->password(), $baseUrl, $model->serverName());
+		return new self($url, $model->username(), $model->password(), $baseUrl, $model->serverName(), $model->mailproxy(), $model->authtype());
 	}
 
 
@@ -75,17 +81,18 @@ class MailManager_Connector_Connector {
 	 * @param $baseUrl Optional - url of the mailserver excluding folder name.
 	 *	This is used to fetch the folders of the mail box
 	 */
-	public function __construct($url, $username, $password, $baseUrl=false, $serverName = '') {
+	public function __construct($url, $username, $password, $baseUrl=false, $serverName = '', $mailproxy='', $authtype='') {
 		$boxUrl = $this->convertCharacterEncoding(html_entity_decode($url),'UTF7-IMAP','UTF-8'); //handle both utf8 characters and html entities
 		$this->mBoxUrl = $boxUrl;
 		$this->mBoxBaseUrl = $baseUrl; // Used for folder List
 
-		/**
-		 * disabled Kerberos authentication
-		 * reference : http://sugarcrmsolutions.blogspot.in/2013/12/problems-in-email-integration.html
-		 */
-
 		if($serverName == 'gmail') {
+			if ($authtype == "XOAUTH2") {
+				// route request to local-imap proxy server.
+				$boxUrl = sprintf("{%s/IMAP4/notls/novalidate-cert}INBOX", $mailproxy); 
+				$tokens = json_decode($password, true);
+				$password = $tokens["access_token"];
+			}
 			$this->mBox = @imap_open($boxUrl, $username, $password);
 		} else {
 			$this->mBox = @imap_open($boxUrl, $username, $password, NULL, 1, array('DISABLE_AUTHENTICATOR' => 'GSSAPI'));
@@ -196,7 +203,7 @@ class MailManager_Connector_Connector {
 	 */
 	public function updateFolder($folder, $options) {
 		$mailbox = $this->convertCharacterEncoding($folder->name($this->mBoxUrl), "UTF7-IMAP","ISO-8859-1"); //Encode folder name
-		$result = @imap_status($this->mBox, $mailbox, $options);
+		$result = $this->mBox ? imap_status($this->mBox, $mailbox, $options) : null;
 		if ($result) {
 			if (isset($result->unseen)) $folder->setUnreadCount($result->unseen);
 			if (isset($result->messages)) $folder->setCount($result->messages);
@@ -221,8 +228,8 @@ class MailManager_Connector_Connector {
 	 * @param Integer $maxLimit - Number of mails
 	 */
 	public function folderMails($folder, $start, $maxLimit) {
-		$folderCheck = @imap_check($this->mBox);
-		if ($folderCheck->Nmsgs) {
+		$folderCheck = $this->mBox ? imap_check($this->mBox) : null;
+		if ($folderCheck && $folderCheck->Nmsgs) {
 
 			$reverse_start = $folderCheck->Nmsgs - ($start*$maxLimit);
 			$reverse_end = $reverse_start - $maxLimit + 1;
@@ -407,8 +414,9 @@ class MailManager_Connector_Connector {
 	 * @return Array folder list
 	 */
 	public function getFolderList() {
+		$folderList = array();
 		if(!empty($this->mBoxBaseUrl)) {
-			$list = @imap_list($this->mBox, $this->mBoxBaseUrl, '*');
+			$list = $this->mBox ? imap_list($this->mBox, $this->mBoxBaseUrl, '*') : array();
 			if (is_array($list)) {
 				foreach ($list as $val) {
 					$folder = $this->convertCharacterEncoding( $val, 'UTF-8', 'UTF7-IMAP' ); //Decode folder name

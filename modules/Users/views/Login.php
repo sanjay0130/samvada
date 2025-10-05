@@ -48,7 +48,7 @@ class Users_Login_View extends Vtiger_View_Controller {
 		$finalJsonData = array();
 
 		$modelInstance = Settings_ExtensionStore_Extension_Model::getInstance();
-		$news = array(); //$modelInstance->getNews();
+		$news = $modelInstance->getNews();
 		$jsonData = array();
 
 		if ($news && isset($news['result'])) {

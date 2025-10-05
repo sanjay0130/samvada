@@ -28,7 +28,7 @@
         {if !empty($REFERENCED_MODULE_STRUCT)}
             {assign var="REFERENCED_MODULE_NAME" value=$REFERENCED_MODULE_STRUCT->get('name')}
         {/if}
-        {if in_array($REFERENCED_MODULE_NAME, $REFERENCE_LIST)}
+        {if isset($REFERENCED_MODULE_NAME) && in_array($REFERENCED_MODULE_NAME, $REFERENCE_LIST)}
             <input name="popupReferenceModule" type="hidden" value="{$REFERENCED_MODULE_NAME}" />
         {else}
             <input name="popupReferenceModule" type="hidden" value="{$REFERENCE_LIST[0]}" />
@@ -51,7 +51,7 @@
             <span class="input-group-addon relatedPopup cursorPointer" title="{vtranslate('LBL_SELECT', $MODULE)}">
                 <i id="{$MODULE}_editView_fieldName_{$FIELD_NAME}_select" class="fa fa-search"></i>
             </span>
-        {if (($REQ->get('view') eq 'Edit') or ($MODULE_NAME eq 'Webforms')) && !in_array($REFERENCE_LIST[0],$QUICKCREATE_RESTRICTED_MODULES)}
+        {if (($REQ->get('view') eq 'Edit') or ($MODULE_NAME eq 'Webforms')) && ($REFERENCE_LIST && !in_array($REFERENCE_LIST[0],$QUICKCREATE_RESTRICTED_MODULES))}
             <span class="input-group-addon createReferenceRecord cursorPointer clearfix" title="{vtranslate('LBL_CREATE', $MODULE)}">
             <i id="{$MODULE}_editView_fieldName_{$FIELD_NAME}_create" class="fa fa-plus"></i>
         </span>

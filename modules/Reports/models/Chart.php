@@ -121,7 +121,10 @@ abstract class Base_Chart extends Vtiger_Base_Model{
 	}
 
 	function getQueryColumnsByFieldModel() {
-		return $this->fieldModels;
+		if (property_exists($this, 'fieldModels')) {
+			return $this->fieldModels;
+		}
+		return array();
 	}
 
 	function setQueryColumns($columns) {
@@ -168,7 +171,7 @@ abstract class Base_Chart extends Vtiger_Base_Model{
 				}
 			}
 		}
-		if($fieldModels) $this->fieldModels = $fieldModels;
+		if(isset($fieldModels) && $fieldModels) $this->fieldModels = $fieldModels;
 	}
 
 	function setGroupByColumns($columns) {
@@ -496,7 +499,8 @@ class PieChart extends Base_Chart {
 	function generateData(){
 		$db = PearDatabase::getInstance();
 		$values = array();
-
+		$labels = array();
+		$links = array();
 		$chartSQL = $this->getQuery();
 		$result = $db->pquery($chartSQL, array());
 		$rows = $db->num_rows($result);

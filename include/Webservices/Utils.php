@@ -57,7 +57,7 @@ function vtws_generateRandomAccessKey($length=10){
 	$accesskey = "";
 	$maxIndex = strlen($source);
 	for($i=0;$i<$length;++$i){
-		$accesskey = $accesskey.substr($source,rand(null,$maxIndex),1);
+		$accesskey = $accesskey.substr($source,rand(0,$maxIndex),1);
 	}
 	return $accesskey;
 }
@@ -117,10 +117,19 @@ function vtws_getUserWebservicesGroups($tabId,$user){
 }
 
 function vtws_getIdComponents($elementid){
+	$elementid = (string)$elementid;
+	if ($elementid && is_numeric($elementid)) return array($elementid); // during (UserId permission check)
+	if (!$elementid || !preg_match("/[0-9]+x[0-9]+/", $elementid)) {
+		throw new WebServiceException(WebServiceErrorCode::$INVALIDID,"Id specified is incorrect");
+	}
 	return explode("x",$elementid);
 }
 
 function vtws_getId($objId, $elemId){
+	if(is_array($elemId)){$elemId=implode(' ',$elemId);}
+	if(!is_numeric($objId) || !is_numeric($elemId)) {
+		throw new WebServiceException(WebServiceErrorCode::$INVALIDID,"Id specified is incorrect");
+	}
 	return $objId."x".$elemId;
 }
 
@@ -139,9 +148,10 @@ function getEmailFieldId($meta, $entityId){
 function vtws_getParameter($parameterArray, $paramName,$default=null){
 
 	if (!get_magic_quotes_gpc()) {
-		if(is_array($parameterArray[$paramName])) {
+		$param = null;
+		if(isset($parameterArray[$paramName]) && is_array($parameterArray[$paramName])) {
 			$param = array_map('addslashes', $parameterArray[$paramName]);
-		} else {
+		} else if (isset($parameterArray[$paramName]) && $parameterArray[$paramName]) {
 			$param = addslashes($parameterArray[$paramName]);
 		}
 	} else {
@@ -1270,7 +1280,7 @@ function vtws_getCompanyId() {
 
 function vtws_recordExists($recordId) {
 	$ids = vtws_getIdComponents($recordId);
-	return !Vtiger_Util_Helper::CheckRecordExistance($ids[1]);
+	return isset($ids[1]) ? !Vtiger_Util_Helper::CheckRecordExistance($ids[1]) : null;
 }
 
 function vtws_isDuplicatesAllowed($webserviceObject){

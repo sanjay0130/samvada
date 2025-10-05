@@ -274,6 +274,7 @@ class PHPExcel_Shared_OLE
 			// Simple conversion from UTF-16LE to ISO-8859-1
 			$name = str_replace("\x00", "", $nameUtf16);
 			$type = self::_readInt1($fh);
+			$pps = null;
 			switch ($type) {
 			case self::OLE_PPS_TYPE_ROOT:
 				$pps = new PHPExcel_Shared_OLE_PPS_Root(null, null, array());
@@ -286,9 +287,8 @@ class PHPExcel_Shared_OLE
 			case self::OLE_PPS_TYPE_FILE:
 				$pps = new PHPExcel_Shared_OLE_PPS_File($name);
 				break;
-			default:
-				continue;
 			}
+			if ($pps == null) continue;
 			fseek($fh, 1, SEEK_CUR);
 			$pps->Type    = $type;
 			$pps->Name    = $name;
@@ -486,12 +486,12 @@ class PHPExcel_Shared_OLE
 		$res = '';
 
 		for ($i = 0; $i < 4; ++$i) {
-			$hex = $low_part % 0x100;
+			$hex = ((int)$low_part) % 0x100;
 			$res .= pack('c', $hex);
 			$low_part /= 0x100;
 		}
 		for ($i = 0; $i < 4; ++$i) {
-			$hex = $high_part % 0x100;
+			$hex = ((int)$high_part) % 0x100;
 			$res .= pack('c', $hex);
 			$high_part /= 0x100;
 		}

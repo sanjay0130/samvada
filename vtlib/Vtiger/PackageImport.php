@@ -186,6 +186,7 @@ class Vtiger_PackageImport extends Vtiger_PackageExport {
 		$languagefile_found = false;
 		$layoutfile_found = false;
 		$vtigerversion_found = false;
+		$extensionfile_found = false;
 
 		$modulename = null;
 		$language_modulename = null;
@@ -500,7 +501,10 @@ class Vtiger_PackageImport extends Vtiger_PackageExport {
 		if(!empty($parenttab)) {
 			$parenttab = $parentTabs[0];
 			$menuInstance = Vtiger_Menu::getInstance($parenttab);
-			$menuInstance->addModule($moduleInstance);
+			if ($menuInstance) $menuInstance->addModule($moduleInstance);
+
+			$appMenuInstance = Vtiger_AppMenu::getInstance($parenttab);
+			if ($appMenuInstance) $appMenuInstance->addModule($moduleInstance);
 		}
 
 		$this->import_Tables($this->_modulexml, $moduleInstance);

@@ -243,22 +243,22 @@ class Leads_Record_Model extends Vtiger_Record_Model {
 				if(!$leadFieldInstance) continue;
 
 				$leadFieldName = $leadFieldInstance->getName();
-				$accountFieldInstance = $accountFieldInstances[$row['accountfid']];
+				$accountFieldInstance = isset($accountFieldInstances[$row['accountfid']]) ? $accountFieldInstances[$row['accountfid']] : '';
 				if ($row['accountfid'] && $accountFieldInstance) {
 					$mappingFields['Accounts'][$accountFieldInstance->getName()] = $leadFieldName;
 				}
-				$contactFieldInstance = $contactFieldInstances[$row['contactfid']];
+				$contactFieldInstance = isset($contactFieldInstances[$row['contactfid']]) ? $contactFieldInstances[$row['contactfid']] : '';
 				if ($row['contactfid'] && $contactFieldInstance) {
 					$mappingFields['Contacts'][$contactFieldInstance->getName()] = $leadFieldName;
 				}
-				$potentialFieldInstance = $potentialFieldInstances[$row['potentialfid']];
+				$potentialFieldInstance = isset($potentialFieldInstances[$row['potentialfid']]) ? $potentialFieldInstances[$row['potentialfid']] : '';
 				if ($row['potentialfid'] && $potentialFieldInstance) {
 					$mappingFields['Potentials'][$potentialFieldInstance->getName()] = $leadFieldName;
 				}
 			}
 			$this->set('mappingFields', $mappingFields);
 		}
-		return $mappingFields[$moduleName][$fieldName];
+		return isset($mappingFields[$moduleName]) && isset($mappingFields[$moduleName][$fieldName]) ? $mappingFields[$moduleName][$fieldName] : null;
 	}
 
 	/**

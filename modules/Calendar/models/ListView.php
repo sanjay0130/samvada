@@ -130,6 +130,7 @@ class Calendar_ListView_Model extends Vtiger_ListView_Model {
 		$headerFields = $listViewContoller->getListViewHeaderFields();
 		foreach($headerFields as $fieldName => $webserviceField) {
 			if($webserviceField && !in_array($webserviceField->getPresence(), array(0,2))) continue;
+			
 			if($webserviceField && $webserviceField->parentReferenceField && !in_array($webserviceField->parentReferenceField->getPresence(), array(0,2))){
 				continue;
 			}
@@ -285,7 +286,7 @@ class Calendar_ListView_Model extends Vtiger_ListView_Model {
 
 			// if the user is having view all permission then it should show the record
 			// as we are showing in detail view
-			if($profileGlobalPermission[1] ==0 || $profileGlobalPermission[2] ==0) {
+			if(isset($profileGlobalPermission) && ($profileGlobalPermission[1] ==0 || $profileGlobalPermission[2] ==0)) {
 				$visibility = false;
 			}
 
@@ -298,7 +299,7 @@ class Calendar_ListView_Model extends Vtiger_ListView_Model {
 				}
 				$record['subject'] = vtranslate('Busy','Events').'*';
 			}
-			if($record['activitytype'] == 'Task') {
+			if(isset($record['activitytype']) && $record['activitytype'] == 'Task') {
 				unset($record['visibility']);
 				unset($rawData['visibility']);
 			}

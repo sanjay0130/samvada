@@ -7,7 +7,7 @@
  * All Rights Reserved.
  ************************************************************************************}
 
-{if $FOLDERS}
+{if isset($FOLDERS) && $FOLDERS}
     {assign var=INBOX_ADDED value=0}
     {assign var=TRASH_ADDED value=0}
     <ul>
@@ -57,7 +57,9 @@
         {/foreach}
         <br>
         <span class="padding15px"><b>{vtranslate('LBL_Folders', $MODULE)}</b></span>
-        
+        {if !isset($TRASH_FOLDER)}
+            {assign var=TRASH_FOLDER value=''}
+        {/if}
         {assign var=IGNORE_FOLDERS value=array($INBOX_FOLDER, $SENT_FOLDER, $TRASH_FOLDER)}
         {foreach item=FOLDER from=$FOLDERS}
             {if !in_array($FOLDER->name(), $IGNORE_FOLDERS)}

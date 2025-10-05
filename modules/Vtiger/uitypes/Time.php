@@ -35,6 +35,7 @@ class Vtiger_Time_UIType extends Vtiger_Base_UIType {
 	 */
 	public static function getTimeValueInAMorPM($time) {
 		if($time){
+			if (substr_count($time, ':') < 2) $time .= ':'; /* to overcome notice of missing index 2 (seconds) below */
 			list($hours, $minutes, $seconds) = explode(':', $time);
 			$format = vtranslate('PM');
 
@@ -58,20 +59,22 @@ class Vtiger_Time_UIType extends Vtiger_Base_UIType {
 
 	/**
 	 * Function to get Time value with seconds
-	 * @param <String> $time
+	 * @param <String> $time hh:mm[:ss] [AM|PM]
 	 * @return <String> time
 	 */
 	public static function getTimeValueWithSeconds($time) {
 		if($time){
 			$timeDetails = explode(' ', $time);
+
+			if (substr_count($timeDetails[0], ':') < 2) $timeDetails[0] .= ':'; // adding : if seconds value is missing to avoid undefined array key error
 			list($hours, $minutes, $seconds) = explode(':', $timeDetails[0]);
 
 			//If pm exists and if it not 12 then we need to make it to 24 hour format
-			if ($timeDetails[1] === 'PM' && $hours != '12') {
+			if (isset($timeDetails[1]) && $timeDetails[1] === 'PM' && $hours != '12') {
 				$hours = $hours+12;
 			}
 
-			if($timeDetails[1] === 'AM' && $hours == '12'){
+			if(isset($timeDetails[1]) && $timeDetails[1] === 'AM' && $hours == '12'){
 				$hours = '00';
 			}
 

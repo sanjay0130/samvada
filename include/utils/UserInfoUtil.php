@@ -352,21 +352,21 @@ function isPermitted($module,$actionname,$record_id='')
 			}
 		}
 		//Checking for vtiger_tab permission
-		if($profileTabsPermission[$tabid] !=0)
+		if(isset($profileTabsPermission[$tabid]) && $profileTabsPermission[$tabid] !=0)
 		{
 			$permission = "no";
 			$log->debug("Exiting isPermitted method ...");
 			return $permission;
 		}
 		//Checking for Action Permission
-		if(strlen($profileActionPermission[$tabid][$actionid]) <  1 && $profileActionPermission[$tabid][$actionid] == '')
+		if(isset($profileActionPermission[$tabid][$actionid]) && strlen($profileActionPermission[$tabid][$actionid]) <  1 && $profileActionPermission[$tabid][$actionid] == '')
 		{
 			$permission = "yes";
 			$log->debug("Exiting isPermitted method ...");
 			return $permission;
 		}
 
-		if($profileActionPermission[$tabid][$actionid] != 0 && $profileActionPermission[$tabid][$actionid] != '')
+		if(isset($profileActionPermission[$tabid][$actionid]) && $profileActionPermission[$tabid][$actionid] != 0 && $profileActionPermission[$tabid][$actionid] != '')
 		{
 			$permission = "no";
 			$log->debug("Exiting isPermitted method ...");
@@ -1054,8 +1054,9 @@ function getRoleInformation($roleid)
 	$rolename=$adb->query_result($result,0,'rolename');
 	$parentrole=$adb->query_result($result,0,'parentrole');
 	$roledepth=$adb->query_result($result,0,'depth');
-	$parentRoleArr=explode('::',$parentrole);
-	$immediateParent=$parentRoleArr[php7_sizeof($parentRoleArr)-2];
+	$parentRoleArr=explode('::',$parentrole ? $parentrole:'');
+	$parentRoleArrLen=php7_sizeof($parentRoleArr);
+	$immediateParent=$parentRoleArrLen>=2 ? $parentRoleArr[$parentRoleArrLen-2]:null;
 	$roleDet=Array();
 	$roleDet[]=$rolename;
 	$roleDet[]=$parentrole;
@@ -1458,8 +1459,11 @@ function getCombinedUserGlobalPermissions($userId)
 	$no_of_profiles=php7_sizeof($profArr);
 	$userGlobalPerrArr=Array();
 
-	$userGlobalPerrArr=getProfileGlobalPermission($profArr[0]);
-	if($no_of_profiles != 1)
+	if($no_of_profiles) {
+		$userGlobalPerrArr=getProfileGlobalPermission($profArr[0]);
+	}
+	
+	if($no_of_profiles > 1)
 	{
 			for($i=1;$i<$no_of_profiles;$i++)
 		{
@@ -1593,7 +1597,7 @@ function getParentRole($roleId)
 	$log->debug("Entering getParentRole(".$roleId.") method ...");
 	$roleInfo=getRoleInformation($roleId);
 	$parentRole=$roleInfo[$roleId][1];
-	$tempParentRoleArr=explode('::',$parentRole);
+	$tempParentRoleArr=explode('::',$parentRole?$parentRole:'');
 	$parentRoleArr=Array();
 	foreach($tempParentRoleArr as $role_id)
 	{
@@ -2128,7 +2132,7 @@ function getPermittedModuleNames()
 	{
 		foreach($tab_seq_array as $tabid=>$seq_value)
 		{
-			if($seq_value === 0 && $profileTabsPermission[$tabid] === 0)
+			if($seq_value === 0 && (isset($profileTabsPermission[$tabid]) && $profileTabsPermission[$tabid]) === 0)
 			{
 				$permittedModules[]=getTabModuleName($tabid);
 			}
@@ -2167,7 +2171,7 @@ function getPermittedModuleIdList() {
 	if($is_admin == false && $profileGlobalPermission[1] == 1 &&
 			$profileGlobalPermission[2] == 1) {
 		foreach($tab_seq_array as $tabid=>$seq_value) {
-			if($seq_value === 0 && $profileTabsPermission[$tabid] === 0) {
+			if($seq_value === 0 && isset($profileTabsPermission[$tabid]) && $profileTabsPermission[$tabid] === 0) {
 				$permittedModules[]=($tabid);
 			}
 		}

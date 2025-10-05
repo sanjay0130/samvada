@@ -9,9 +9,6 @@
  * All Rights Reserved.
  * ********************************************************************************** */
 
-// Include the Monolog library for logging functionality
-require 'vendor/autoload.php';
-
 // Import necessary classes from Monolog
 use Monolog\Logger as MonologLogger;
 use Monolog\Handler\StreamHandler;
@@ -90,7 +87,7 @@ class MonologLoggerEx extends MonologLogger {
     function isDebugEnabled() {
         $debugLevel = false;
         foreach ($this->getHandlers() as $handler) {
-            if ($handler->getLogLevel() == static::DEBUG) {
+            if ($handler->getLevel() == static::DEBUG) {
                 $debugLevel = true;
                 break;
             }

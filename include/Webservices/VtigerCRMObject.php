@@ -185,7 +185,7 @@ class VtigerCRMObject{
 		global $adb;
 		$error = false;
 		$adb->startTransaction();
-		DeleteEntity($this->getTabName(), $this->getTabName(), $this->instance, $id,$returnid);
+		DeleteEntity($this->getTabName(), $this->getTabName(), $this->instance, $id,"");
 		$error = $adb->hasFailedTransaction();
 		$adb->completeTransaction();
 		return !$error;
@@ -199,7 +199,7 @@ class VtigerCRMObject{
 		global $adb;
 		
 		$exists = false;
-		$sql = "select * from vtiger_crmentity where crmid=? and deleted=0";
+		$sql = "select 1 from vtiger_crmentity where crmid=? and deleted=0";
 		$result = $adb->pquery($sql , array($id));
 		if($result != null && isset($result)){
 			if($adb->num_rows($result)>0){
@@ -213,7 +213,7 @@ class VtigerCRMObject{
 		global $adb;
 		
 		$seType = null;
-		$sql = "select * from vtiger_crmentity where crmid=? and deleted=0";
+		$sql = "select setype from vtiger_crmentity where crmid=? and deleted=0";
 		$result = $adb->pquery($sql , array($id));
 		if($result != null && isset($result)){
 			if($adb->num_rows($result)>0){

@@ -12,7 +12,7 @@
 {strip}
 {assign var="FIELD_INFO" value=$FIELD_MODEL->getFieldInfo()}
 {assign var="SPECIAL_VALIDATOR" value=$FIELD_MODEL->getValidator()}
-{if (!$FIELD_NAME)}
+{if !isset($FIELD_NAME) || empty($FIELD_NAME)}
     {assign var="FIELD_NAME" value=$FIELD_MODEL->getFieldName()}
 {/if}
 {if $FIELD_MODEL->get('uitype') eq '71'}
@@ -38,7 +38,7 @@
             {/if}
         />
           <input type="hidden" name="base_currency" value="{$BASE_CURRENCY_NAME}">
-          <input type="hidden" name="cur_{$BASE_CURRENCY_ID}_check" value="on">
+          <input type="hidden" name="cur_{(isset($BASE_CURRENCY_ID)) ? $BASE_CURRENCY_ID : ''}_check" value="on">
           <input type="hidden" id="requstedUnitPrice" name="{$BASE_CURRENCY_NAME}" value="">
 	</div>
     {if $REQ->get('view') eq 'Edit'}

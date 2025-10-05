@@ -82,7 +82,7 @@ class Calendar_TaskManagement_View extends Vtiger_Index_View {
 
 		$viewer = $this->getViewer($request);
 		$viewer->assign('MODULE', $moduleName);
-		$viewer->assign('TASKS', $tasks[$request->get('priority')]);
+		$viewer->assign('TASKS', isset($tasks[$request->get('priority')]) ? $tasks[$request->get('priority')] : array());
 		$viewer->assign('PRIORITY', $request->get('priority'));
 		$viewer->assign('TASK_FILTERS', $this->getFiltersFromSession());
 		$viewer->assign('COLORS', $this->generateColors($request));
@@ -135,8 +135,8 @@ class Calendar_TaskManagement_View extends Vtiger_Index_View {
 	}
 
 	protected function getFiltersFromSession() {
-		$filters = $_SESSION['task_filters'];
-		if (!isset($filters)) {
+		$filters = isset($_SESSION['task_filters'])? $_SESSION['task_filters'] : null;
+		if (!$filters) {
 			$filters = array('status' => array(), 'date' => 'all', 'assigned_user_id' => array());
 		}
 		return $filters;
