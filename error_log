@@ -1,0 +1,20 @@
+[03-Oct-2025 13:44:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_report() in /home/samvadac/public_html/sanjay/include/database/PearDatabase.php:822
+Stack trace:
+#0 /home/samvadac/public_html/sanjay/include/database/PearDatabase.php(1123): PearDatabase->connect()
+#1 /home/samvadac/public_html/sanjay/include/utils/UserInfoUtil.php(12): require_once('/home/samvadac/...')
+#2 /home/samvadac/public_html/sanjay/vtlib/Vtiger/Access.php(10): include_once('/home/samvadac/...')
+#3 /home/samvadac/public_html/sanjay/vtlib/Vtiger/ModuleBasic.php(10): include_once('/home/samvadac/...')
+#4 /home/samvadac/public_html/sanjay/vtlib/Vtiger/Module.php(12): include_once('/home/samvadac/...')
+#5 /home/samvadac/public_html/sanjay/index.php(22): include_once('/home/samvadac/...')
+#6 {main}
+  thrown in /home/samvadac/public_html/sanjay/include/database/PearDatabase.php on line 822
+[03-Oct-2025 14:10:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_report() in /home/samvadac/public_html/sanjay/include/database/PearDatabase.php:821
+Stack trace:
+#0 /home/samvadac/public_html/sanjay/include/database/PearDatabase.php(1122): PearDatabase->connect()
+#1 /home/samvadac/public_html/sanjay/include/utils/UserInfoUtil.php(12): require_once('/home/samvadac/...')
+#2 /home/samvadac/public_html/sanjay/vtlib/Vtiger/Access.php(10): include_once('/home/samvadac/...')
+#3 /home/samvadac/public_html/sanjay/vtlib/Vtiger/ModuleBasic.php(10): include_once('/home/samvadac/...')
+#4 /home/samvadac/public_html/sanjay/vtlib/Vtiger/Module.php(12): include_once('/home/samvadac/...')
+#5 /home/samvadac/public_html/sanjay/index.php(22): include_once('/home/samvadac/...')
+#6 {main}
+  thrown in /home/samvadac/public_html/sanjay/include/database/PearDatabase.php on line 821

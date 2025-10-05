@@ -1,0 +1,104 @@
+Traced on 2025-10-04 05:28:25
+FileAccessForInclusion - 
+/home/samvadac/public_html/sanjay/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/home/samvadac/public_html/sanjay/data/CRMEntity.php::checkFileAccessForInclusion::57<br>
+/home/samvadac/public_html/sanjay/data/CRMEntity.php::getInstance::1372<br>
+/home/samvadac/public_html/sanjay/modules/Potentials/Potentials.php::unlinkDependencies::736<br>
+/home/samvadac/public_html/sanjay/data/CRMEntity.php::unlinkDependencies::1345<br>
+/home/samvadac/public_html/sanjay/modules/Vtiger/models/Module.php::trash::180<br>
+/home/samvadac/public_html/sanjay/modules/Vtiger/models/Record.php::deleteRecord::266<br>
+/home/samvadac/public_html/sanjay/modules/Vtiger/actions/MassDelete.php::delete::40<br>
+/home/samvadac/public_html/sanjay/includes/main/WebUI.php::process::215<br>
+/home/samvadac/public_html/sanjay/index.php::process::26<br>
+
+Traced on 2025-10-04 05:28:38
+FileAccessForInclusion - 
+/home/samvadac/public_html/sanjay/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/home/samvadac/public_html/sanjay/data/CRMEntity.php::checkFileAccessForInclusion::57<br>
+/home/samvadac/public_html/sanjay/data/CRMEntity.php::getInstance::1372<br>
+/home/samvadac/public_html/sanjay/modules/Potentials/Potentials.php::unlinkDependencies::736<br>
+/home/samvadac/public_html/sanjay/data/CRMEntity.php::unlinkDependencies::1345<br>
+/home/samvadac/public_html/sanjay/modules/Vtiger/models/Module.php::trash::180<br>
+/home/samvadac/public_html/sanjay/modules/Vtiger/models/Record.php::deleteRecord::266<br>
+/home/samvadac/public_html/sanjay/modules/Vtiger/actions/MassDelete.php::delete::40<br>
+/home/samvadac/public_html/sanjay/includes/main/WebUI.php::process::215<br>
+/home/samvadac/public_html/sanjay/index.php::process::26<br>
+
+Traced on 2025-10-04 05:44:11
+FileAccessForInclusion - 
+/home/samvadac/public_html/sanjay/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/home/samvadac/public_html/sanjay/data/CRMEntity.php::checkFileAccessForInclusion::57<br>
+/home/samvadac/public_html/sanjay/data/CRMEntity.php::getInstance::1372<br>
+/home/samvadac/public_html/sanjay/modules/Potentials/Potentials.php::unlinkDependencies::736<br>
+/home/samvadac/public_html/sanjay/data/CRMEntity.php::unlinkDependencies::1345<br>
+/home/samvadac/public_html/sanjay/modules/Vtiger/models/Module.php::trash::180<br>
+/home/samvadac/public_html/sanjay/modules/Vtiger/models/Record.php::deleteRecord::266<br>
+/home/samvadac/public_html/sanjay/modules/Vtiger/actions/MassDelete.php::delete::40<br>
+/home/samvadac/public_html/sanjay/includes/main/WebUI.php::process::215<br>
+/home/samvadac/public_html/sanjay/index.php::process::26<br>
+
+Traced on 2025-10-04 05:44:24
+FileAccessForInclusion - 
+/home/samvadac/public_html/sanjay/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/home/samvadac/public_html/sanjay/data/CRMEntity.php::checkFileAccessForInclusion::57<br>
+/home/samvadac/public_html/sanjay/data/CRMEntity.php::getInstance::1372<br>
+/home/samvadac/public_html/sanjay/modules/Potentials/Potentials.php::unlinkDependencies::736<br>
+/home/samvadac/public_html/sanjay/data/CRMEntity.php::unlinkDependencies::1345<br>
+/home/samvadac/public_html/sanjay/modules/Vtiger/models/Module.php::trash::180<br>
+/home/samvadac/public_html/sanjay/modules/Vtiger/models/Record.php::deleteRecord::266<br>
+/home/samvadac/public_html/sanjay/modules/Vtiger/actions/MassDelete.php::delete::40<br>
+/home/samvadac/public_html/sanjay/includes/main/WebUI.php::process::215<br>
+/home/samvadac/public_html/sanjay/index.php::process::26<br>
+
+Traced on 2025-10-04 10:12:14
+FileAccessForInclusion - 
+/home/samvadac/public_html/sanjay/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/home/samvadac/public_html/sanjay/data/CRMEntity.php::checkFileAccessForInclusion::57<br>
+/home/samvadac/public_html/sanjay/data/CRMEntity.php::getInstance::1372<br>
+/home/samvadac/public_html/sanjay/modules/Potentials/Potentials.php::unlinkDependencies::736<br>
+/home/samvadac/public_html/sanjay/data/CRMEntity.php::unlinkDependencies::1345<br>
+/home/samvadac/public_html/sanjay/modules/Vtiger/models/Module.php::trash::180<br>
+/home/samvadac/public_html/sanjay/modules/Vtiger/models/Record.php::deleteRecord::266<br>
+/home/samvadac/public_html/sanjay/modules/Vtiger/actions/MassDelete.php::delete::40<br>
+/home/samvadac/public_html/sanjay/includes/main/WebUI.php::process::215<br>
+/home/samvadac/public_html/sanjay/index.php::process::26<br>
+
+Traced on 2025-10-04 10:12:41
+FileAccessForInclusion - 
+/home/samvadac/public_html/sanjay/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/home/samvadac/public_html/sanjay/data/CRMEntity.php::checkFileAccessForInclusion::57<br>
+/home/samvadac/public_html/sanjay/data/CRMEntity.php::getInstance::1372<br>
+/home/samvadac/public_html/sanjay/modules/Potentials/Potentials.php::unlinkDependencies::736<br>
+/home/samvadac/public_html/sanjay/data/CRMEntity.php::unlinkDependencies::1345<br>
+/home/samvadac/public_html/sanjay/modules/Vtiger/models/Module.php::trash::180<br>
+/home/samvadac/public_html/sanjay/modules/Vtiger/models/Record.php::deleteRecord::266<br>
+/home/samvadac/public_html/sanjay/modules/Vtiger/actions/MassDelete.php::delete::40<br>
+/home/samvadac/public_html/sanjay/includes/main/WebUI.php::process::215<br>
+/home/samvadac/public_html/sanjay/index.php::process::26<br>
+
+Traced on 2025-10-04 10:19:12
+FileAccessForInclusion - 
+/home/samvadac/public_html/sanjay/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/home/samvadac/public_html/sanjay/data/CRMEntity.php::checkFileAccessForInclusion::57<br>
+/home/samvadac/public_html/sanjay/data/CRMEntity.php::getInstance::1372<br>
+/home/samvadac/public_html/sanjay/modules/Potentials/Potentials.php::unlinkDependencies::736<br>
+/home/samvadac/public_html/sanjay/data/CRMEntity.php::unlinkDependencies::1345<br>
+/home/samvadac/public_html/sanjay/modules/Vtiger/models/Module.php::trash::180<br>
+/home/samvadac/public_html/sanjay/modules/Vtiger/models/Record.php::deleteRecord::266<br>
+/home/samvadac/public_html/sanjay/modules/Vtiger/actions/MassDelete.php::delete::40<br>
+/home/samvadac/public_html/sanjay/includes/main/WebUI.php::process::215<br>
+/home/samvadac/public_html/sanjay/index.php::process::26<br>
+
+Traced on 2025-10-04 11:04:46
+FileAccessForInclusion - 
+/Applications/XAMPP/xamppfiles/htdocs/samvada/include/utils/CommonUtils.php::checkFileAccessForInclusion::388<br>
+/Applications/XAMPP/xamppfiles/htdocs/samvada/data/CRMEntity.php::checkFileAccessForInclusion::57<br>
+/Applications/XAMPP/xamppfiles/htdocs/samvada/data/CRMEntity.php::getInstance::1372<br>
+/Applications/XAMPP/xamppfiles/htdocs/samvada/modules/Potentials/Potentials.php::unlinkDependencies::736<br>
+/Applications/XAMPP/xamppfiles/htdocs/samvada/data/CRMEntity.php::unlinkDependencies::1345<br>
+/Applications/XAMPP/xamppfiles/htdocs/samvada/modules/Vtiger/models/Module.php::trash::180<br>
+/Applications/XAMPP/xamppfiles/htdocs/samvada/modules/Vtiger/models/Record.php::deleteRecord::266<br>
+/Applications/XAMPP/xamppfiles/htdocs/samvada/modules/Vtiger/actions/MassDelete.php::delete::40<br>
+/Applications/XAMPP/xamppfiles/htdocs/samvada/includes/main/WebUI.php::process::215<br>
+/Applications/XAMPP/xamppfiles/htdocs/samvada/index.php::process::26<br>
+
