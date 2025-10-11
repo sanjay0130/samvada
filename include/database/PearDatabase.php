@@ -1129,11 +1129,25 @@ class PearDatabase{
 		}
 		return $db_character_set;
 	}
+
+	function printRawQuery($query, $params) {
+
+		$finalQuery = $query;
+		foreach ($params as $param) {
+			// Escape single quotes and safely inject the parameter value
+			$param = $this->sql_escape_string($param);
+			$finalQuery = preg_replace('/\?/', "'$param'", $finalQuery, 1);
+		}
+		return $finalQuery;
+
+	}
+
 } /* End of class */
 
 if(empty($adb)) {
 	$adb = new PearDatabase();
 	$adb->connect();
+	$adb->setDieOnError(true);
 }
 //$adb->database->setFetchMode(ADODB_FETCH_BOTH);
 ?>
