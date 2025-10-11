@@ -26,7 +26,7 @@
                                 <li>
                                     <time class="update_time cursorDefault">
                                         <small title="{Vtiger_Util_Helper::formatDateTimeIntoDayString($RECENT_ACTIVITY->getParent()->get('createdtime'))}">
-                                            {Vtiger_Util_Helper::formatDateDiffInStrings($RECENT_ACTIVITY->getParent()->get('createdtime'))}
+                                            {Vtiger_Datetime_UIType::getDisplayDateTimeValue($RECENT_ACTIVITY->getParent()->get('createdtime'))}
                                         </small>
                                     </time>
                                     {assign var=USER_MODEL value=$RECENT_ACTIVITY->getModifiedBy()}
@@ -54,7 +54,7 @@
                                 <li>
                                     <time class="update_time cursorDefault">
                                         <small title="{Vtiger_Util_Helper::formatDateTimeIntoDayString($RECENT_ACTIVITY->getActivityTime())}">
-                                            {Vtiger_Util_Helper::formatDateDiffInStrings($RECENT_ACTIVITY->getActivityTime())}
+                                            {Vtiger_Datetime_UIType::getDisplayDateTimeValue($RECENT_ACTIVITY->getActivityTime())}
                                         </small>
                                     </time>
                                     {assign var=USER_MODEL value=$RECENT_ACTIVITY->getModifiedBy()}
@@ -134,7 +134,7 @@
                                 <li>
                                     <time class="update_time cursorDefault">
                                         <small title="{Vtiger_Util_Helper::formatDateTimeIntoDayString($RELATION->get('changedon'))}">
-                                            {Vtiger_Util_Helper::formatDateDiffInStrings($RELATION->get('changedon'))} </small>
+                                            {Vtiger_Datetime_UIType::getDisplayDateTimeValue($RELATION->get('changedon'))} </small>
                                     </time>
 									<div class="update_icon bg-info-{$RELATED_MODULE|strtolower}">
 										{if {$RELATED_MODULE|strtolower eq 'modcomments'}}

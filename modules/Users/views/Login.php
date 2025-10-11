@@ -48,7 +48,7 @@ class Users_Login_View extends Vtiger_View_Controller {
 		$finalJsonData = array();
 
 		$modelInstance = Settings_ExtensionStore_Extension_Model::getInstance();
-		$news = $modelInstance->getNews();
+		$news = array(); //$modelInstance->getNews();
 		$jsonData = array();
 
 		if ($news && isset($news['result'])) {
@@ -89,6 +89,10 @@ class Users_Login_View extends Vtiger_View_Controller {
 			$message = 'Mail has been sent to your inbox, please check your e-mail';
 		}
 
+		$companyDetails = Vtiger_CompanyDetails_Model::getInstanceById();
+		$companyLogo = $companyDetails->getLogo();
+		$viewer->assign('COMPANY_LOGO',$companyLogo);
+
 		$viewer->assign('ERROR', $error);
 		$viewer->assign('MESSAGE', $message);
 		$viewer->assign('MAIL_STATUS', $mailStatus);
@@ -98,7 +102,7 @@ class Users_Login_View extends Vtiger_View_Controller {
 	function postProcess(Vtiger_Request $request) {
 		$moduleName = $request->getModule();
 		$viewer = $this->getViewer($request);
-		$viewer->view('Footer.tpl', $moduleName);
+		//$viewer->view('Footer.tpl', $moduleName);
 	}
 
 	function getPageTitle(Vtiger_Request $request) {

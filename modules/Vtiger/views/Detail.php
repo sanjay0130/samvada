@@ -412,6 +412,7 @@ class Vtiger_Detail_View extends Vtiger_Index_View {
 		echo $viewer->view('DetailViewSummaryContents.tpl', $moduleName, true);
 	}
 
+
 	/**
 	 * Added to support Engagements view in Vtiger7
 	 * @param Vtiger_Request $request
@@ -435,16 +436,20 @@ class Vtiger_Detail_View extends Vtiger_Index_View {
 		$recentActivities = ModTracker_Record_Model::getUpdates($parentRecordId, $pagingModel,$moduleName);
 		$pagingModel->calculatePageRange($recentActivities);
 
-		if($pagingModel->getCurrentPage() == ModTracker_Record_Model::getTotalRecordCount($parentRecordId)/$pagingModel->getPageLimit()) {
+		// Use instance instead of static call
+		$modTrackerModel = new ModTracker_Record_Model();
+		$totalCount = $modTrackerModel->getTotalRecordCount($parentRecordId);
+
+		if($pagingModel->getCurrentPage() == $totalCount / $pagingModel->getPageLimit()) {
 			$pagingModel->set('nextPageExists', false);
 		}
+
 		$recordModel = Vtiger_Record_Model::getInstanceById($parentRecordId);
 		$viewer = $this->getViewer($request);
-		$viewer->assign('SOURCE',$recordModel->get('source'));
+		$viewer->assign('SOURCE', $recordModel->get('source'));
 
-        $totalCount = ModTracker_Record_Model::getTotalRecordCount($parentRecordId);
-        $pageLimit = $pagingModel->getPageLimit();
-        $pageCount = ceil((int) $totalCount / (int) $pageLimit);
+		$pageLimit = $pagingModel->getPageLimit();
+		$pageCount = ceil((int) $totalCount / (int) $pageLimit);
         if($pageCount - $pagingModel->getCurrentPage() == 0) {
             $pagingModel->set('nextPageExists', false);
         } else {

@@ -36,6 +36,88 @@ class Potentials_Module_Model extends Vtiger_Module_Model {
 		return $parentQuickLinks;
 	}
 
+	function getCalendarActivities($mode, $pagingModel, $user, $recordId = false) {
+		$currentUser = Users_Record_Model::getCurrentUserModel();
+		$db = PearDatabase::getInstance();
+
+		if (!$user) {
+			$user = $currentUser->getId();
+		}
+
+		$nowInUserFormat = Vtiger_Datetime_UIType::getDisplayDateTimeValue(date('Y-m-d H:i:s'));
+		$nowInDBFormat = Vtiger_Datetime_UIType::getDBDateTimeValue($nowInUserFormat);
+		list($currentDate, $currentTime) = explode(' ', $nowInDBFormat);
+
+		// Base query
+		$query = "SELECT vtiger_crmentity.crmid, crmentity2.crmid AS parent_id, vtiger_crmentity.smownerid, vtiger_crmentity.setype, vtiger_crmentity.description, vtiger_activity.* 
+				FROM vtiger_activity
+				INNER JOIN vtiger_crmentity ON vtiger_crmentity.crmid = vtiger_activity.activityid
+				INNER JOIN vtiger_seactivityrel ON vtiger_seactivityrel.activityid = vtiger_activity.activityid
+				INNER JOIN vtiger_crmentity AS crmentity2 ON vtiger_seactivityrel.crmid = crmentity2.crmid AND crmentity2.deleted = 0 AND crmentity2.setype = ?
+				LEFT JOIN vtiger_groups ON vtiger_groups.groupid = vtiger_crmentity.smownerid";
+
+		// Access control (kept for non-admins)
+		$query .= Users_Privileges_Model::getNonAdminAccessControlQuery('Calendar');
+
+		// Only filter deleted records
+		//$query .= " WHERE vtiger_crmentity.deleted=0";
+		$query .= " WHERE vtiger_crmentity.deleted=0
+					AND (vtiger_activity.activitytype NOT IN ('Emails'))";
+
+		if(!$currentUser->isAdminUser()) {
+			$moduleFocus = CRMEntity::getInstance('Calendar');
+			$condition = $moduleFocus->buildWhereClauseConditionForCalendar();
+			if($condition) {
+				$query .= ' AND '.$condition;
+			}
+		}
+
+
+		$params = array($this->getName());
+
+		if ($recordId) {
+			$query .= " AND vtiger_seactivityrel.crmid = ?";
+			array_push($params, $recordId);
+		}
+
+		// Include all users if $user = 'all'
+		if($user != 'all' && $user != '') {
+			$query .= " AND vtiger_crmentity.smownerid = ?";
+			array_push($params, $user);
+		}
+
+		// Order and pagination
+		$query .= " ORDER BY date_start DESC, time_start LIMIT ". $pagingModel->getStartIndex() .", ". ($pagingModel->getPageLimit()+1);
+
+
+		$result = $db->pquery($query, $params);
+		$numOfRows = $db->num_rows($result);
+
+		$activities = array();
+		for($i=0; $i<$numOfRows; $i++) {
+			$newRow = $db->query_result_rowdata($result, $i);
+			$model = Vtiger_Record_Model::getCleanInstance('Calendar');
+
+			// Do not hide any fields
+			$model->setData($newRow);
+			$model->setId($newRow['crmid']);
+			$activities[$newRow['crmid']] = $model;
+		}
+
+		// Paging logic
+		$pagingModel->calculatePageRange($activities);
+		if($numOfRows > $pagingModel->getPageLimit()){
+			array_pop($activities);
+			$pagingModel->set('nextPageExists', true);
+		} else {
+			$pagingModel->set('nextPageExists', false);
+		}
+
+		return $activities;
+	}
+
+
+
 	/**
 	 * Function returns number of Open Potentials in each of the sales stage
 	 * @param <Integer> $owner - userid
