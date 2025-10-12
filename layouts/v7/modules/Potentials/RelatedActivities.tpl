@@ -37,39 +37,6 @@
 			{assign var=SOURCE_MODEL value=$RECORD}
 		</div>
 
-		{literal}
-			<style>
-				.activityblock {
-					max-height: 400px;
-					/* Adjust height as needed */
-					overflow-y: auto;
-					/* Vertical scrollbar */
-					padding-right: 10px;
-					/* Optional padding for scrollbar */
-					border: 1px solid #ddd;
-					/* Optional border */
-					border-radius: 5px;
-					/* Optional rounded corners */
-					background-color: #fafafa;
-					/* Optional background */
-				}
-
-				/* Optional scrollbar styling for better look */
-				.activityblock::-webkit-scrollbar {
-					width: 6px;
-				}
-
-				.activityblock::-webkit-scrollbar-thumb {
-					background-color: rgba(0, 0, 0, 0.3);
-					border-radius: 3px;
-				}
-
-				.activityblock::-webkit-scrollbar-track {
-					background-color: #f1f1f1;
-				}
-			</style>
-		{/literal}
-
 
 
 		<div class="widget_contents activityblock">
@@ -88,48 +55,41 @@
 									<span class='vicon-{strtolower($RECORD->get('activitytype'))}'></span>
 								</div> *}
 								{* ============ Calendar Activity Type Badge ============= *}
-
 								{* Put this CSS at the top of your template (outside loops) *}
 								{literal}
 									<style>
 										.crm-activity-badge {
 											display: inline-block;
-											color: #fff;
-											font-weight: bold;
-											font-size: 14px;
-											text-transform: uppercase;
-											padding: 6px 10px;
-											border-radius: 5px;
-											letter-spacing: 0.5px;
-											white-space: nowrap;
+											padding: 2px 1px !important;
+											line-height: 15px;
 										}
 									</style>
 								{/literal}
-
 
 								{* Inside your record loop *}
 								{assign var=activityType value=strtolower($RECORD->get('activitytype'))}
 
 								{if $activityType == 'call'}
-									{assign var=bgColor value='#28a745'} {* Green *}
+									{assign var=bgColor value='#abff9e'} {* Green *}
 								{elseif $activityType == 'meeting'}
-									{assign var=bgColor value='#17a2b8'} {* Teal *}
+									{assign var=bgColor value='#ff9696'} {* Teal *}
 								{elseif $activityType == 'task'}
 									{assign var=bgColor value='#ffc107'} {* Yellow *}
 								{elseif $activityType == 'email'}
 									{assign var=bgColor value='#6f42c1'} {* Purple *}
 								{else}
-									{assign var=bgColor value='#007bff'} {* Default Blue *}
+									{assign var=bgColor value='#ffcb8c'} {* Default Blue *}
 								{/if}
 
-								<div class='module-icon col-lg-2 col-md-2 col-sm-2 textAlignCenter'>
-									<span class="crm-activity-badge vicon-{$activityType}" style="background-color: {$bgColor};">
+								<div class='module-icon col-lg-3 col-md-3 col-sm-3 textAlignLeft'>
+									<span class="crm-activity-badge" style="background-color: {$bgColor};">
 										&nbsp;{$activityType|capitalize}
 									</span>
 								</div>
 
 
-								<div class='col-lg-8 col-md-8 col-sm-8'>
+
+								<div class='col-lg-7 col-md-7 col-sm-7 textAlignLeft'>
 									<div class="summaryViewEntries">
 										{if $DETAILVIEW_PERMITTED == 'yes'}<strong><a href="{$RECORD->getDetailViewUrl()}"
 												title="{$RECORD->get('subject')}">{$RECORD->get('subject')}</a></strong>{else}{$RECORD->get('subject')}
@@ -156,7 +116,7 @@
 											title="{Vtiger_Util_Helper::formatDateTimeIntoDayString("$START_DATE $START_TIME")}">{Vtiger_Util_Helper::formatDateIntoStrings($START_DATE, $START_TIME)}</strong></span>
 								</div>
 
-								<div class='col-lg-2 col-md-2 col-sm-2 activityStatus' style='line-height: 0px;padding-right:30px;'>
+								<div class='col-lg-2 col-md-2 col-sm-2 activityStatus'>
 									<div class="row">
 										{if $RECORD->get('activitytype') eq 'Task'}
 											{assign var=MODULE_NAME value=$RECORD->getModuleName()}
