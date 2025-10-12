@@ -1,0 +1,93 @@
+Absolutely! Let’s break it step by step, so you can see exactly what each part does. This will also make it easier to adjust in the future.
+
+Step 1: Get the tabid for Leads and Potentials
+-- Get tabid of Leads module
+SELECT tabid, name FROM vtiger_tab WHERE name = 'Leads';
+
+-- Get tabid of Potentials module
+SELECT tabid, name FROM vtiger_tab WHERE name = 'Potentials';
+
+
+Purpose:
+Vtiger stores module IDs (tabid) in vtiger_tab. We need these to find the correct fields in the next steps.
+
+Step 2: Get fieldid of the Lead Primary Phone (phone)
+SELECT fieldid, fieldname, tabid 
+FROM vtiger_field 
+WHERE fieldname = 'phone' 
+  AND tabid = (SELECT tabid FROM vtiger_tab WHERE name = 'Leads');
+
+
+Purpose:
+Find the unique fieldid of the Lead field you want to copy from.
+
+Step 3: Get fieldid of the Opportunity (Potential) Mobile Phone (cf_751)
+SELECT fieldid, fieldname, tabid 
+FROM vtiger_field 
+WHERE fieldname = 'cf_751' 
+  AND tabid = (SELECT tabid FROM vtiger_tab WHERE name = 'Potentials');
+
+
+Purpose:
+Find the unique fieldid of the Opportunity field you want to prefill.
+
+Step 4: Check existing mapping in vtiger_convertleadmapping
+SELECT * 
+FROM vtiger_convertleadmapping
+WHERE potentialfid = (
+    SELECT fieldid 
+    FROM vtiger_field 
+    WHERE fieldname = 'cf_751' 
+      AND tabid = (SELECT tabid FROM vtiger_tab WHERE name = 'Potentials')
+);
+
+
+Purpose:
+See if there is already a mapping for cf_751. This helps prevent overwriting accidentally.
+
+Step 5: Update the mapping to use Lead Primary Phone
+UPDATE vtiger_convertleadmapping
+SET leadfid = (
+    SELECT fieldid 
+    FROM vtiger_field 
+    WHERE fieldname = 'phone' 
+      AND tabid = (SELECT tabid FROM vtiger_tab WHERE name = 'Leads')
+)
+WHERE potentialfid = (
+    SELECT fieldid 
+    FROM vtiger_field 
+    WHERE fieldname = 'cf_751' 
+      AND tabid = (SELECT tabid FROM vtiger_tab WHERE name = 'Potentials')
+);
+
+
+Purpose:
+Maps the Opportunity field cf_751 to the Lead Primary Phone.
+
+✅ Optional: Verify the update
+SELECT * 
+FROM vtiger_convertleadmapping
+WHERE potentialfid = (
+    SELECT fieldid 
+    FROM vtiger_field 
+    WHERE fieldname = 'cf_751' 
+      AND tabid = (SELECT tabid FROM vtiger_tab WHERE name = 'Potentials')
+);
+
+
+Purpose:
+Ensure that leadfid is now pointing to the phone field of the Lead module.
+
+Summary of the Steps
+
+Find tabid of both modules.
+
+Get fieldid of the Lead field (phone).
+
+Get fieldid of the Opportunity field (cf_751).
+
+Check if mapping exists in vtiger_convertleadmapping.
+
+Update mapping to point to Lead Primary Phone.
+
+Verify the mapping.

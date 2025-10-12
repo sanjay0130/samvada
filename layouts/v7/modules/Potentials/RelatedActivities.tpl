@@ -36,7 +36,43 @@
 			</div>
 			{assign var=SOURCE_MODEL value=$RECORD}
 		</div>
-		<div class="widget_contents">
+
+		{literal}
+			<style>
+				.activityblock {
+					max-height: 400px;
+					/* Adjust height as needed */
+					overflow-y: auto;
+					/* Vertical scrollbar */
+					padding-right: 10px;
+					/* Optional padding for scrollbar */
+					border: 1px solid #ddd;
+					/* Optional border */
+					border-radius: 5px;
+					/* Optional rounded corners */
+					background-color: #fafafa;
+					/* Optional background */
+				}
+
+				/* Optional scrollbar styling for better look */
+				.activityblock::-webkit-scrollbar {
+					width: 6px;
+				}
+
+				.activityblock::-webkit-scrollbar-thumb {
+					background-color: rgba(0, 0, 0, 0.3);
+					border-radius: 3px;
+				}
+
+				.activityblock::-webkit-scrollbar-track {
+					background-color: #f1f1f1;
+				}
+			</style>
+		{/literal}
+
+
+
+		<div class="widget_contents activityblock">
 			{if php7_count($ACTIVITIES) neq '0'}
 				{foreach item=RECORD key=KEY from=$ACTIVITIES}
 					{assign var=START_DATE value=$RECORD->get('date_start')}
@@ -44,18 +80,60 @@
 					{assign var=EDITVIEW_PERMITTED value=isPermitted('Calendar', 'EditView', $RECORD->get('crmid'))}
 					{assign var=DETAILVIEW_PERMITTED value=isPermitted('Calendar', 'DetailView', $RECORD->get('crmid'))}
 					{assign var=DELETE_PERMITTED value=isPermitted('Calendar', 'Delete', $RECORD->get('crmid'))}
-					<div class="activityEntries">
+					<div class="activityEntries" style="padding: 10px;">
 						<input type="hidden" class="activityId" value="{$RECORD->get('activityid')}" />
 						<div class='media'>
 							<div class='row'>
-								<div class='module-icon col-lg-1 col-md-1 col-sm-1 textAlignCenter'>
+								{* <div class='module-icon col-lg-1 col-md-1 col-sm-1 textAlignCenter'>
 									<span class='vicon-{strtolower($RECORD->get('activitytype'))}'></span>
+								</div> *}
+								{* ============ Calendar Activity Type Badge ============= *}
+
+								{* Put this CSS at the top of your template (outside loops) *}
+								{literal}
+									<style>
+										.crm-activity-badge {
+											display: inline-block;
+											color: #fff;
+											font-weight: bold;
+											font-size: 14px;
+											text-transform: uppercase;
+											padding: 6px 10px;
+											border-radius: 5px;
+											letter-spacing: 0.5px;
+											white-space: nowrap;
+										}
+									</style>
+								{/literal}
+
+
+								{* Inside your record loop *}
+								{assign var=activityType value=strtolower($RECORD->get('activitytype'))}
+
+								{if $activityType == 'call'}
+									{assign var=bgColor value='#28a745'} {* Green *}
+								{elseif $activityType == 'meeting'}
+									{assign var=bgColor value='#17a2b8'} {* Teal *}
+								{elseif $activityType == 'task'}
+									{assign var=bgColor value='#ffc107'} {* Yellow *}
+								{elseif $activityType == 'email'}
+									{assign var=bgColor value='#6f42c1'} {* Purple *}
+								{else}
+									{assign var=bgColor value='#007bff'} {* Default Blue *}
+								{/if}
+
+								<div class='module-icon col-lg-2 col-md-2 col-sm-2 textAlignCenter'>
+									<span class="crm-activity-badge vicon-{$activityType}" style="background-color: {$bgColor};">
+										&nbsp;{$activityType|capitalize}
+									</span>
 								</div>
-								<div class='col-lg-7 col-md-7 col-sm-7'>
+
+
+								<div class='col-lg-8 col-md-8 col-sm-8'>
 									<div class="summaryViewEntries">
 										{if $DETAILVIEW_PERMITTED == 'yes'}<strong><a href="{$RECORD->getDetailViewUrl()}"
-											title="{$RECORD->get('subject')}">{$RECORD->get('subject')}</a></strong>{else}{$RECORD->get('subject')}
-											{/if}&nbsp;&nbsp;
+												title="{$RECORD->get('subject')}">{$RECORD->get('subject')}</a></strong>{else}{$RECORD->get('subject')}
+										{/if}&nbsp;&nbsp;
 										{if $EDITVIEW_PERMITTED == 'yes'}<a
 												href="{$RECORD->getEditViewUrl()}&sourceModule={$SOURCE_MODEL->getModuleName()}&sourceRecord={$SOURCE_MODEL->getId()}&relationOperation=true"
 												class="fieldValue"><i class="summaryViewEdit fa fa-pencil"
@@ -78,7 +156,7 @@
 											title="{Vtiger_Util_Helper::formatDateTimeIntoDayString("$START_DATE $START_TIME")}">{Vtiger_Util_Helper::formatDateIntoStrings($START_DATE, $START_TIME)}</strong></span>
 								</div>
 
-								<div class='col-lg-4 col-md-4 col-sm-4 activityStatus' style='line-height: 0px;padding-right:30px;'>
+								<div class='col-lg-2 col-md-2 col-sm-2 activityStatus' style='line-height: 0px;padding-right:30px;'>
 									<div class="row">
 										{if $RECORD->get('activitytype') eq 'Task'}
 											{assign var=MODULE_NAME value=$RECORD->getModuleName()}
