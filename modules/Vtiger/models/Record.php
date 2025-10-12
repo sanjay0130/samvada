@@ -414,14 +414,14 @@ class Vtiger_Record_Model extends Vtiger_Base_Model {
 
 		
 		/*TOTHOMweb search Leads*/
-		if ($module == false || $module == "Leads" ) {
+		if ($module == false || in_array('Leads', $module)) {
 			$query = $query ." UNION ALL " . 'select CONCAT(vtiger_leaddetails.firstname, " ", vtiger_leaddetails.lastname) as label, vtiger_leaddetails.leadid as crmid, "Leads" as setype, vtiger_crmentity.createdtime as createdtime from vtiger_leaddetails, vtiger_crmentity where vtiger_leaddetails.leadid = vtiger_crmentity.crmid AND vtiger_crmentity.deleted = 0 AND (vtiger_leaddetails.email like ? OR vtiger_leaddetails.company like ? OR vtiger_leaddetails.leadid in (select leadaddressid from vtiger_leadaddress where city LIKE ? OR code LIKE ? OR state LIKE ? OR pobox LIKE ? OR country LIKE ? OR phone LIKE ? OR mobile LIKE ? OR fax LIKE ? OR lane LIKE ? OR leadaddresstype LIKE ?))';
 			$params = array_merge($params ,array("%$searchKey%","%$searchKey%","%$searchKey%","%$searchKey%","%$searchKey%","%$searchKey%","%$searchKey%","%$searchKey%","%$searchKey%","%$searchKey%","%$searchKey%","%$searchKey%"));
 		}
 		/*End TOTHOMweb search Leads*/
 
 		/*TOTHOMweb search Contacts*/
-		if ($module == false || $module == "Contacts" ) {
+		if ($module == false || in_array('Contacts', $module)) {
 			$query = $query ." UNION ALL " . 'select CONCAT(vtiger_contactdetails.firstname, " ", vtiger_contactdetails.lastname) as label, vtiger_contactdetails.contactid as crmid, "Contacts" as setype,  vtiger_crmentity.createdtime as createdtime from vtiger_contactdetails, vtiger_crmentity where vtiger_contactdetails.contactid = vtiger_crmentity.crmid AND vtiger_crmentity.deleted = 0 AND 
             (vtiger_contactdetails.email like ? 
             OR vtiger_contactdetails.firstname like ? 
@@ -441,7 +441,7 @@ class Vtiger_Record_Model extends Vtiger_Base_Model {
 
 		/*Saji From Here */
 
-		if ($module == false || $module == "Accounts" ) {
+		if ($module == false || in_array('Accounts', $module)) {
 			$query = $query ." UNION ALL " . 'select vtiger_account.accountname as label, vtiger_account.accountid as crmid, "Accounts" as setype,  vtiger_crmentity.createdtime as createdtime from vtiger_account, vtiger_crmentity 
 			where vtiger_account.accountid = vtiger_crmentity.crmid 
 			AND vtiger_crmentity.deleted = 0 
