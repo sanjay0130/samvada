@@ -87,7 +87,10 @@ class Potentials_Module_Model extends Vtiger_Module_Model {
 		}
 
 		// Order and pagination
-		$query .= " ORDER BY date_start DESC, time_start LIMIT ". $pagingModel->getStartIndex() .", ". ($pagingModel->getPageLimit()+1);
+		$query .= " ORDER BY date_start DESC, time_start DESC LIMIT ". $pagingModel->getStartIndex() .", ". ($pagingModel->getPageLimit()+1);
+
+
+		//echo $query; print_r($params); die; 
 
 
 		$result = $db->pquery($query, $params);

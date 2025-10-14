@@ -60,8 +60,9 @@
 									<style>
 										.crm-activity-badge {
 											display: inline-block;
-											padding: 2px 1px !important;
+											padding: 3px 3px !important;
 											line-height: 15px;
+											font-weight: bold;
 										}
 									</style>
 								{/literal}
@@ -89,8 +90,8 @@
 
 
 
-								<div class='col-lg-7 col-md-7 col-sm-7 textAlignLeft'>
-									<div class="summaryViewEntries">
+								<div class='col-lg-7 col-md-7 col-sm-7 textAlignLeft' style="margin-left: -38px;">
+									<div class="summaryViewEntries" style="width: 120% !important;">
 										{if $DETAILVIEW_PERMITTED == 'yes'}<strong><a href="{$RECORD->getDetailViewUrl()}"
 												title="{$RECORD->get('subject')}">{$RECORD->get('subject')}</a></strong>{else}{$RECORD->get('subject')}
 										{/if}&nbsp;&nbsp;
