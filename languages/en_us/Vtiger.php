@@ -18,6 +18,7 @@ $languageStrings = array(
 	// Common Actions
 	'LBL_NEW' => 'New',
 	'LBL_LINKED' => 'Linked',
+	'LBL_LINKED_FORMAT' => 'Created',
 	'LBL_SELECT_ALL' => 'Select all',
 	'LBL_SELECT_TO_LOAD_LIST' => 'Select to Load List',
 	'LBL_CREATING_NEW' => 'Creating New',
@@ -1238,6 +1239,7 @@ $languageStrings = array(
 	'LBL_SELECT_RECORD_FIELD' => 'Select Record Field',
 	'LBL_PREVIEW' => 'Preview',
 	'LBL_UNLINKED' => 'Unlinked',
+	'LBL_UNLINKED_FORMATTED' => 'Deleted',
 
 	'LBL_FOLLOW' => 'Follow',
 	'LBL_UNFOLLOW' => 'Unfollow',

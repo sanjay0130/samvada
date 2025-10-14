@@ -175,82 +175,147 @@
                         </style>
                     {/literal}
 
-
                     <li class="activity-item">
+                        {assign var=RELATION value=$RECENT_ACTIVITY->getRelationInstance()}
+                        {assign var=RELATED_RECORD value=$RELATION->getLinkedRecord()}
+                        {assign var=RELATED_MODULE value=$RELATED_MODULE|capitalize}
+
+                        {* Fallback-safe user who did the action *}
+                        {assign var=USER_ID value=$RECENT_ACTIVITY->get('whodid')}
+                        {if !$USER_ID}
+                            {assign var=USER_ID value=$RELATION->get('whodid')}
+                        {/if}
+                        {assign var=USER_NAME value=Vtiger_Functions::getOwnerRecordLabel($USER_ID)}
+
+                        {* Date & Time of change *}
                         <time class="update_time cursorDefault">
                             <small title="{Vtiger_Util_Helper::formatDateTimeIntoDayString($RELATION->get('changedon'))}">
-                                {Vtiger_Datetime_UIType::getDisplayDateTimeValue($RELATION->get('changedon'))} </small>
+                                {Vtiger_Datetime_UIType::getDisplayDateTimeValue($RELATION->get('changedon'))}
+                            </small>
                         </time>
-                        <div class="update_icon bg-info-{$RELATED_MODULE|strtolower}">
-                            {if {$RELATED_MODULE|strtolower eq 'modcomments'}}
-                                {assign var="VICON_MODULES" value="vicon-chat"}
-                                <i class="update_image {$VICON_MODULES}"></i>
+
+                        {* Module icon *}
+                        <div class="update_icon bg-info-{$RELATED_MODULE|lower}">
+                            {if $RELATED_MODULE|lower eq 'modcomments'}
+                                <i class="update_image vicon-chat"></i>
                             {else}
                                 <span class="update_image">{Vtiger_Module_Model::getModuleIconPath($RELATED_MODULE)}</span>
                             {/if}
                         </div>
+
+                        {* Readable sentence *}
                         <div class="update_info">
-                            {* <h5>
-                                {assign var=RELATION value=$RECENT_ACTIVITY->getRelationInstance()}
-                                <span class="field-name">
-                                    {vtranslate($RELATION->getLinkedRecord()->getModuleName(), $RELATION->getLinkedRecord()->getModuleName())}
-                                </span>&nbsp;
-                                <span>
-                                    {if $RECENT_ACTIVITY->isRelationLink()}
-                                        {vtranslate('LBL_LINKED', $MODULE_NAME)}
-                                    {else}
-                                        {vtranslate('LBL_UNLINKED', $MODULE_NAME)}
-                                    {/if}
-                                </span>
-                            </h5> *}
-                            <div class='font-x-small updateInfoContainer textOverflowEllipsis'>
-                                <span>
-                                    {if $RELATION->getLinkedRecord()->getModuleName() eq 'Calendar'}
-                                        {if isPermitted('Calendar', 'DetailView', $RELATION->getLinkedRecord()->getId()) eq 'yes'}
-                                            {assign var=PERMITTED value=1}
+
+                            <h5 class="mb-1">
+                                <span style="color:#007bff;font-weight:600;">
+                                    {$USER_NAME|default:'Unknown User'}
+                                </span> &nbsp;
+
+                                {if $RECENT_ACTIVITY->isRelationLink()}
+                                    {vtranslate('LBL_LINKED_FORMAT', $MODULE_NAME)}
+                                {else}
+                                    {vtranslate('LBL_UNLINKED_FORMATTED', $MODULE_NAME)}
+                                {/if}
+                                <strong>
+                                    &nbsp;
+
+
+                                    {if $RELATED_MODULE == 'Calendar'}
+
+
+                                        {$summary = $RELATION->getCalendarActivityUpdateSummary($RELATION->getLinkedRecord()->getId())}
+                                        {* Inside your record loop *}
+                                        {assign var=activityType value=strtolower($summary.activityType)}
+
+                                        {if $activityType == 'call'}
+                                            {assign var=bgColor value='#abff9e'} {* Green *}
+                                        {elseif $activityType == 'meeting'}
+                                            {assign var=bgColor value='#ff9696'} {* Teal *}
+                                        {elseif $activityType == 'task'}
+                                            {assign var=bgColor value='#ffc107'} {* Yellow *}
+                                        {elseif $activityType == 'email'}
+                                            {assign var=bgColor value='#6f42c1'} {* Purple *}
                                         {else}
-                                            {assign var=PERMITTED value=0}
+                                            {assign var=bgColor value='#ffcb8c'} {* Default Blue *}
                                         {/if}
+
+
+                                        <i>"{$summary.subject}" on {$summary.startDateTime} </i>
+                                        &nbsp;&nbsp;
+                                        <span style="background-color: {$bgColor};">
+                                            {$activityType|capitalize}
+                                        </span>
+
                                     {else}
-                                        {assign var=PERMITTED value=1}
-                                    {/if}
-                                    {if $PERMITTED}
-                                        {if $RELATED_MODULE eq 'ModComments'}
-                                            {$RELATION->getLinkedRecord()->getName()}
-                                        {else}
+
+                                        <span style="color:#28a745;font-weight:600;">
+                                            {vtranslate($RELATED_MODULE, $RELATED_MODULE)}
+                                        </span>
+                                        &nbsp;
+                                        {if $RELATED_RECORD && $RELATED_RECORD->getId() neq ''}
                                             {assign var=DETAILVIEW_URL value=$RELATION->getRecordDetailViewUrl()}
-                                            {if $DETAILVIEW_URL}<a
-                                                    {if stripos($DETAILVIEW_URL, 'javascript:') === 0}onclick{else}href{/if}='{$DETAILVIEW_URL}'>{/if}
-                                                    {* <strong>{$RELATION->getLinkedRecord()->getName()}</strong> *}
-
-                                                    {$summary = $RELATION->getCalendarActivityUpdateSummary($RELATION->getLinkedRecord()->getId())}
-
-                                                    <strong>{$summary}</strong>
-
-                                                    {if $DETAILVIEW_URL}</a>{/if}
+                                            {if $DETAILVIEW_URL}
+                                                <a href="{$DETAILVIEW_URL}">
+                                                    <i>{$RELATED_RECORD->getName()}</i>
+                                                </a>
+                                            {else}
+                                                <i>{$RELATED_RECORD->getName()}</i>
                                             {/if}
+                                        {else}
+                                            <strong>Record deleted</strong>
                                         {/if}
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
-                    {else if $RECENT_ACTIVITY->isRestore()}
-                    {/if}
+
+                                    {/if}
+                                </strong>
+
+
+                            </h5>
+
+                            {*
+        <div class="font-x-small updateInfoContainer textOverflowEllipsis">
+            {if $RELATED_RECORD && $RELATED_RECORD->getId() neq ''}
+                {assign var=DETAILVIEW_URL value=$RELATION->getRecordDetailViewUrl()}
+                {if $DETAILVIEW_URL}
+                    <a href="{$DETAILVIEW_URL}">
+                        <strong>{$RELATED_RECORD->getName()}</strong>
+                    </a>
+                {else}
+                    <strong>{$RELATED_RECORD->getName()}</strong>
                 {/if}
-            {/foreach}
-            {if $PAGING_MODEL->isNextPageExists()}
-                <li id='more_button'>
-                    <div class='update_icon' id="moreLink">
-                        <button type="button" class="btn btn-success moreRecentUpdates">{vtranslate('LBL_MORE',$MODULE_NAME)}..</button>
-                    </div>
-                </li>
+            {else}
+                <strong>Record deleted</strong>
             {/if}
-            </ul>
-        {else}
-            <div class="summaryWidgetContainer">
-                <p class="textAlignCenter">{vtranslate('LBL_NO_RECENT_UPDATES')}</p>
-            </div>
+        </div>
+        *}
+                        </div>
+                    </li>
+
+
+
+
+
+
+
+
+
+
+                {else if $RECENT_ACTIVITY->isRestore()}
+                {/if}
+            {/if}
+        {/foreach}
+        {if $PAGING_MODEL->isNextPageExists()}
+            <li id='more_button'>
+                <div class='update_icon' id="moreLink">
+                    <button type="button" class="btn btn-success moreRecentUpdates">{vtranslate('LBL_MORE',$MODULE_NAME)}..</button>
+                </div>
+            </li>
         {/if}
+        </ul>
+    {else}
+        <div class="summaryWidgetContainer">
+            <p class="textAlignCenter">{vtranslate('LBL_NO_RECENT_UPDATES')}</p>
         </div>
-        </div>
-    {/strip}
+    {/if}
+    </div>
+    </div>
+{/strip}

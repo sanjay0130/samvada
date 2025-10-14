@@ -125,7 +125,11 @@ class ModTracker_Relation_Model extends Vtiger_Record_Model
 			);
 
 
-			return $summary;
+			return array(
+				'activityType' => htmlspecialchars(ucfirst($activityType), ENT_QUOTES, 'UTF-8'),
+				'startDateTime' => htmlspecialchars($startDateTime, ENT_QUOTES, 'UTF-8'),
+				'subject' => htmlspecialchars($subject ?: 'No Subject', ENT_QUOTES, 'UTF-8')
+			);
 		}
 
 		return false;
