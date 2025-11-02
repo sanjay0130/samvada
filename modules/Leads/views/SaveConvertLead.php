@@ -77,6 +77,11 @@ class Leads_SaveConvertLead_View extends Vtiger_View_Controller {
 			exit;
 		}
 
+		//ADDED BY Sanjay To redirect to opportunity details page after convert lead
+		if(!empty($result['Potentials'])) {
+			$potentialIdComponents = vtws_getIdComponents($result['Potentials']);
+			$potentialId = $potentialIdComponents[1];
+		}
 		if(!empty($result['Accounts'])) {
 			$accountIdComponents = vtws_getIdComponents($result['Accounts']);
 			$accountId = $accountIdComponents[1];
@@ -86,7 +91,9 @@ class Leads_SaveConvertLead_View extends Vtiger_View_Controller {
 			$contactId = $contactIdComponents[1];
 		}
 
-		if(!empty($accountId)) {
+		if(!empty($potentialId)) {
+			header("Location: index.php?view=Detail&module=Potentials&record=$potentialId");
+		}elseif(!empty($accountId)) {
 			header("Location: index.php?view=Detail&module=Accounts&record=$accountId");
 		} elseif (!empty($contactId)) {
 			header("Location: index.php?view=Detail&module=Contacts&record=$contactId");
