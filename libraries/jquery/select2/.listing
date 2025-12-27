@@ -1,0 +1,12 @@
+drwxr-xr-x    2 zktqffwb   zktqffwb          196 May 19  2018 .
+drwxr-xr-x   33 zktqffwb   zktqffwb         4096 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb          618 May 19  2018 LICENSE
+-rw-r--r--    1 zktqffwb   zktqffwb         2814 May 19  2018 README.md
+-rw-r--r--    1 zktqffwb   zktqffwb          196 May 19  2018 component.json
+-rw-r--r--    1 zktqffwb   zktqffwb         1145 May 19  2018 release.sh
+-rw-r--r--    1 zktqffwb   zktqffwb        17682 May 19  2018 select2.css
+-rw-r--r--    1 zktqffwb   zktqffwb        89827 May 19  2018 select2.js
+-rw-r--r--    1 zktqffwb   zktqffwb        35455 May 19  2018 select2.min.js
+-rw-r--r--    1 zktqffwb   zktqffwb          613 May 19  2018 select2.png
+-rw-r--r--    1 zktqffwb   zktqffwb          845 May 19  2018 select2x2.png
+-rw-r--r--    1 zktqffwb   zktqffwb         1849 May 19  2018 spinner.gif

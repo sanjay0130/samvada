@@ -1,0 +1,13 @@
+drwxr-xr-x    3 zktqffwb   zktqffwb          311 May 20  2018 .
+drwxr-xr-x   43 zktqffwb   zktqffwb         4096 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         2708 May 20  2018 DetailViewHeaderTitle.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb          691 May 20  2018 DetailViewSummaryContents.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         2408 May 20  2018 EditColor.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb          660 May 20  2018 ModuleSummaryView.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         3559 May 20  2018 RecipientPreferences.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         7453 May 20  2018 SelectEmailFields.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb        13362 May 20  2018 ShowChart.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb        15806 May 20  2018 ShowChartPrintView.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb        13332 May 20  2018 SummaryViewWidgets.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         1133 May 20  2018 SummaryWidgets.tpl
+drwxr-xr-x    2 zktqffwb   zktqffwb           23 May 20  2018 resources

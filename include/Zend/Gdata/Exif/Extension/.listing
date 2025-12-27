@@ -1,0 +1,13 @@
+drwxr-xr-x    2 zktqffwb   zktqffwb          208 May 19  2018 .
+drwxr-xr-x    3 zktqffwb   zktqffwb           56 May 19  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         1745 May 19  2018 Distance.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1745 May 19  2018 Exposure.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1730 May 19  2018 FStop.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1730 May 19  2018 Flash.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1760 May 19  2018 FocalLength.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1770 May 19  2018 ImageUniqueId.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1720 May 19  2018 Iso.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1725 May 19  2018 Make.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1730 May 19  2018 Model.php
+-rw-r--r--    1 zktqffwb   zktqffwb        16856 May 19  2018 Tags.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1725 May 19  2018 Time.php

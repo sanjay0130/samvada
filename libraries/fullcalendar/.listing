@@ -1,0 +1,9 @@
+drwxr-xr-x    2 zktqffwb   zktqffwb          194 May 19  2018 .
+drwxr-xr-x   29 zktqffwb   zktqffwb         4096 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         1409 May 19  2018 fullcalendar-bootstrap.css
+-rw-r--r--    1 zktqffwb   zktqffwb         1525 May 19  2018 fullcalendar-bootstrap.less
+-rw-r--r--    1 zktqffwb   zktqffwb        10699 May 20  2018 fullcalendar.css
+-rw-r--r--    1 zktqffwb   zktqffwb       124737 May 19  2018 fullcalendar.js
+-rw-r--r--    1 zktqffwb   zktqffwb        49999 May 19  2018 fullcalendar.min.js
+-rw-r--r--    1 zktqffwb   zktqffwb         1337 May 19  2018 fullcalendar.print.css
+-rw-r--r--    1 zktqffwb   zktqffwb         2777 May 19  2018 gcal.js

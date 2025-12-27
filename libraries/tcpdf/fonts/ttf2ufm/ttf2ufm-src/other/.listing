@@ -1,0 +1,14 @@
+drwxr-xr-x    2 zktqffwb   zktqffwb          194 May 19  2018 .
+drwxr-xr-x    7 zktqffwb   zktqffwb         4096 May 19  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb          374 May 19  2018 Makefile
+-rw-r--r--    1 zktqffwb   zktqffwb         5582 May 19  2018 README.html
+-rw-r--r--    1 zktqffwb   zktqffwb         6238 May 19  2018 bmpfont.h
+-rw-r--r--    1 zktqffwb   zktqffwb         1798 May 19  2018 bz.c
+-rw-r--r--    1 zktqffwb   zktqffwb         4120 May 19  2018 bzscreen.c
+-rw-r--r--    1 zktqffwb   zktqffwb          988 May 19  2018 bzscreen.h
+-rw-r--r--    1 zktqffwb   zktqffwb         1236 May 19  2018 cmpf.c
+-rw-r--r--    1 zktqffwb   zktqffwb         1002 May 19  2018 cntstems.pl
+-rw-r--r--    1 zktqffwb   zktqffwb          877 May 19  2018 dmpf.c
+-rw-r--r--    1 zktqffwb   zktqffwb         1589 May 19  2018 lst.pl
+-rw-r--r--    1 zktqffwb   zktqffwb         1124 May 19  2018 showdf
+-rw-r--r--    1 zktqffwb   zktqffwb        14172 May 19  2018 showg

@@ -1,0 +1,17 @@
+drwxr-xr-x   16 zktqffwb   zktqffwb          330 May 20  2018 .
+drwxr-xr-x    3 zktqffwb   zktqffwb          185 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb          490 May 20  2018 _base.css
+drwxr-xr-x    2 zktqffwb   zktqffwb          148 May 20  2018 attention_seekers
+drwxr-xr-x    2 zktqffwb   zktqffwb          121 May 20  2018 bouncing_entrances
+drwxr-xr-x    2 zktqffwb   zktqffwb          126 May 20  2018 bouncing_exits
+drwxr-xr-x    2 zktqffwb   zktqffwb          210 May 20  2018 fading_entrances
+drwxr-xr-x    2 zktqffwb   zktqffwb          219 May 20  2018 fading_exits
+drwxr-xr-x    2 zktqffwb   zktqffwb          100 May 20  2018 flippers
+drwxr-xr-x    2 zktqffwb   zktqffwb           55 May 20  2018 lightspeed
+drwxr-xr-x    2 zktqffwb   zktqffwb          136 May 20  2018 rotating_entrances
+drwxr-xr-x    2 zktqffwb   zktqffwb          141 May 20  2018 rotating_exits
+drwxr-xr-x    2 zktqffwb   zktqffwb           97 May 20  2018 sliding_entrances
+drwxr-xr-x    2 zktqffwb   zktqffwb          101 May 20  2018 sliding_exits
+drwxr-xr-x    2 zktqffwb   zktqffwb           60 May 20  2018 specials
+drwxr-xr-x    2 zktqffwb   zktqffwb          111 May 20  2018 zooming_entrances
+drwxr-xr-x    2 zktqffwb   zktqffwb          116 May 20  2018 zooming_exits

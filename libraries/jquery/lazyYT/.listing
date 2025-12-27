@@ -1,0 +1,13 @@
+drwxr-xr-x    3 zktqffwb   zktqffwb          212 May 20  2018 .
+drwxr-xr-x   33 zktqffwb   zktqffwb         4096 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb           22 May 20  2018 .gitignore
+-rw-r--r--    1 zktqffwb   zktqffwb         1114 May 20  2018 Gruntfile.js
+-rw-r--r--    1 zktqffwb   zktqffwb         1080 May 20  2018 LICENSE
+-rw-r--r--    1 zktqffwb   zktqffwb         1161 May 20  2018 README.md
+drwxr-xr-x    2 zktqffwb   zktqffwb           24 May 20  2018 demo
+-rw-r--r--    1 zktqffwb   zktqffwb         2837 May 20  2018 lazyYT.css
+-rw-r--r--    1 zktqffwb   zktqffwb          814 May 20  2018 lazyYT.jquery.json
+-rw-r--r--    1 zktqffwb   zktqffwb         2266 May 20  2018 lazyYT.js
+-rw-r--r--    1 zktqffwb   zktqffwb         2684 May 20  2018 lazyYT.min.css
+-rw-r--r--    1 zktqffwb   zktqffwb         1369 May 20  2018 lazyYT.min.js
+-rw-r--r--    1 zktqffwb   zktqffwb          648 May 20  2018 package.json

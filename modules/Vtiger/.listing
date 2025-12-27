@@ -1,0 +1,13 @@
+drwxr-xr-x   10 zktqffwb   zktqffwb          208 May 20  2018 .
+drwxr-xr-x   60 zktqffwb   zktqffwb         4096 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         9450 May 20  2018 CRMEntity.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1029 May 19  2018 RecordLabelUpdater.php
+drwxr-xr-x    2 zktqffwb   zktqffwb         4096 May 20  2018 actions
+drwxr-xr-x    2 zktqffwb   zktqffwb          166 May 19  2018 dashboards
+drwxr-xr-x    2 zktqffwb   zktqffwb          159 May 20  2018 handlers
+drwxr-xr-x    2 zktqffwb   zktqffwb           64 May 19  2018 helpers
+-rw-r--r--    1 zktqffwb   zktqffwb         6595 May 19  2018 layout_utils.php
+drwxr-xr-x    2 zktqffwb   zktqffwb         4096 May 20  2018 models
+drwxr-xr-x    3 zktqffwb   zktqffwb           83 May 19  2018 resources_650
+drwxr-xr-x    2 zktqffwb   zktqffwb         4096 May 20  2018 uitypes
+drwxr-xr-x    2 zktqffwb   zktqffwb         4096 May 20  2018 views

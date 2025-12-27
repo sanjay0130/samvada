@@ -1,0 +1,8 @@
+drwxr-xr-x    3 zktqffwb   zktqffwb          115 May 21  2018 .
+drwxr-xr-x   15 zktqffwb   zktqffwb         4096 May 21  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         7802 Jul  6  2014 _LGPL.txt
+-rw-r--r--    1 zktqffwb   zktqffwb         1750 Jul  6  2014 _lisez_moi.txt
+drwxr-xr-x    2 zktqffwb   zktqffwb         8192 May 21  2018 data
+-rw-r--r--    1 zktqffwb   zktqffwb          381 Jul  6  2014 image.php
+-rw-r--r--    1 zktqffwb   zktqffwb         2136 Jul  6  2014 index.php
+-rw-r--r--    1 zktqffwb   zktqffwb        20919 Jul  6  2014 qrcode.class.php

@@ -1,0 +1,11 @@
+drwxr-xr-x    3 zktqffwb   zktqffwb          270 May 19  2018 .
+drwxr-xr-x    3 zktqffwb   zktqffwb           78 May 19  2018 ..
+drwxr-xr-x   20 zktqffwb   zktqffwb         4096 May 19  2018 HTMLPurifier
+-rw-r--r--    1 zktqffwb   zktqffwb          274 May 19  2018 HTMLPurifier.auto.php
+-rw-r--r--    1 zktqffwb   zktqffwb          629 May 19  2018 HTMLPurifier.autoload.php
+-rw-r--r--    1 zktqffwb   zktqffwb          545 May 19  2018 HTMLPurifier.func.php
+-rw-r--r--    1 zktqffwb   zktqffwb         9201 May 19  2018 HTMLPurifier.includes.php
+-rw-r--r--    1 zktqffwb   zktqffwb          964 May 19  2018 HTMLPurifier.kses.php
+-rw-r--r--    1 zktqffwb   zktqffwb          235 May 19  2018 HTMLPurifier.path.php
+-rw-r--r--    1 zktqffwb   zktqffwb         8776 May 19  2018 HTMLPurifier.php
+-rw-r--r--    1 zktqffwb   zktqffwb        11773 May 19  2018 HTMLPurifier.safe-includes.php

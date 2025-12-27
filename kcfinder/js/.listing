@@ -1,0 +1,7 @@
+drwxr-xr-x    3 zktqffwb   zktqffwb          105 May 19  2018 .
+drwxr-xr-x   10 zktqffwb   zktqffwb          193 May 19  2018 ..
+drwxr-xr-x    2 zktqffwb   zktqffwb          162 May 19  2018 browser
+-rw-r--r--    1 zktqffwb   zktqffwb         4760 May 19  2018 helper.js
+-rw-r--r--    1 zktqffwb   zktqffwb         4874 May 19  2018 jquery.drag.js
+-rw-r--r--    1 zktqffwb   zktqffwb        72174 May 19  2018 jquery.js
+-rw-r--r--    1 zktqffwb   zktqffwb         2487 May 19  2018 jquery.rightClick.js

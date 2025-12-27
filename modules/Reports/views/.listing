@@ -1,0 +1,14 @@
+drwxr-xr-x    2 zktqffwb   zktqffwb          266 May 20  2018 .
+drwxr-xr-x    6 zktqffwb   zktqffwb          334 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         9812 May 20  2018 ChartDetail.php
+-rw-r--r--    1 zktqffwb   zktqffwb        11849 May 20  2018 ChartEdit.php
+-rw-r--r--    1 zktqffwb   zktqffwb         3295 May 20  2018 ChartSaveAjax.php
+-rw-r--r--    1 zktqffwb   zktqffwb         8144 May 20  2018 Detail.php
+-rw-r--r--    1 zktqffwb   zktqffwb        13967 May 20  2018 Edit.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1481 May 20  2018 EditFolder.php
+-rw-r--r--    1 zktqffwb   zktqffwb         3174 May 20  2018 ExportReport.php
+-rw-r--r--    1 zktqffwb   zktqffwb        10700 May 20  2018 List.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1524 May 19  2018 ListAjax.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1448 May 20  2018 ListViewQuickPreview.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1702 May 20  2018 MoveReports.php
+-rw-r--r--    1 zktqffwb   zktqffwb         2714 May 20  2018 SaveAjax.php

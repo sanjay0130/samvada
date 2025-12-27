@@ -1,0 +1,10 @@
+drwxr-xr-x    2 zktqffwb   zktqffwb          246 May 19  2018 .
+drwxr-xr-x    4 zktqffwb   zktqffwb          170 May 19  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         1564 May 19  2018 Forecast.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb          926 May 19  2018 FunnelAmount.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         2282 May 20  2018 GroupBySalesPerson.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         3700 May 20  2018 GroupBySalesStage.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         2276 May 20  2018 PipelinedAmountPerSalesPerson.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb          793 May 19  2018 TopPotentials.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         1608 May 20  2018 TopPotentialsContents.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         1349 May 19  2018 TotalRevenuePerSalesPerson.tpl

@@ -1,0 +1,12 @@
+drwxr-xr-x    3 zktqffwb   zktqffwb          206 May 19  2018 .
+drwxr-xr-x   20 zktqffwb   zktqffwb         4096 May 19  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         1844 May 19  2018 Entry.php
+drwxr-xr-x    2 zktqffwb   zktqffwb           31 May 19  2018 Extension
+-rw-r--r--    1 zktqffwb   zktqffwb         1832 May 19  2018 Feed.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1267 May 19  2018 ItemEntry.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1257 May 19  2018 ItemFeed.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1515 May 19  2018 ItemQuery.php
+-rw-r--r--    1 zktqffwb   zktqffwb         2041 May 19  2018 Query.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1276 May 19  2018 SnippetEntry.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1312 May 19  2018 SnippetFeed.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1446 May 19  2018 SnippetQuery.php

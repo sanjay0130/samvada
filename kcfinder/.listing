@@ -1,0 +1,15 @@
+drwxr-xr-x   10 zktqffwb   zktqffwb          193 May 19  2018 .
+drwxr-x---   35 zktqffwb   99               4096 Aug 29 22:26 ..
+-rw-r--r--    1 zktqffwb   zktqffwb          498 May 19  2018 browse.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1887 May 20  2018 config.php
+drwxr-xr-x    3 zktqffwb   zktqffwb           95 May 19  2018 core
+-rw-r--r--    1 zktqffwb   zktqffwb         3511 May 19  2018 css.php
+drwxr-xr-x    2 zktqffwb   zktqffwb           93 May 19  2018 doc
+drwxr-xr-x    3 zktqffwb   zktqffwb          105 May 19  2018 js
+-rw-r--r--    1 zktqffwb   zktqffwb         1092 May 19  2018 js_localize.php
+drwxr-xr-x    2 zktqffwb   zktqffwb          236 May 19  2018 lang
+drwxr-xr-x    2 zktqffwb   zktqffwb          212 May 19  2018 lib
+drwxr-xr-x    3 zktqffwb   zktqffwb           20 May 19  2018 themes
+drwxr-xr-x    2 zktqffwb   zktqffwb          227 May 19  2018 tpl
+drwxr-xr-x    2 zktqffwb   zktqffwb           23 May 19  2018 upload
+-rw-r--r--    1 zktqffwb   zktqffwb          500 May 19  2018 upload.php

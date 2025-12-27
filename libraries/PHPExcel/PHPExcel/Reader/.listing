@@ -1,0 +1,14 @@
+drwxr-xr-x    4 zktqffwb   zktqffwb          240 May 19  2018 .
+drwxr-xr-x   13 zktqffwb   zktqffwb         4096 May 19  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb        11530 May 19  2018 CSV.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1799 May 19  2018 DefaultReadFilter.php
+-rw-r--r--    1 zktqffwb   zktqffwb        29157 May 19  2018 Excel2003XML.php
+drwxr-xr-x    2 zktqffwb   zktqffwb           40 May 19  2018 Excel2007
+-rw-r--r--    1 zktqffwb   zktqffwb        84888 May 19  2018 Excel2007.php
+drwxr-xr-x    2 zktqffwb   zktqffwb           24 May 19  2018 Excel5
+-rw-r--r--    1 zktqffwb   zktqffwb       221875 May 19  2018 Excel5.php
+-rw-r--r--    1 zktqffwb   zktqffwb        32372 May 19  2018 Gnumeric.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1534 May 19  2018 IReadFilter.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1577 May 19  2018 IReader.php
+-rw-r--r--    1 zktqffwb   zktqffwb        22477 May 19  2018 OOCalc.php
+-rw-r--r--    1 zktqffwb   zktqffwb        14888 May 19  2018 SYLK.php

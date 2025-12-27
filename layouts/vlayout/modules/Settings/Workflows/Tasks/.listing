@@ -1,0 +1,9 @@
+drwxr-xr-x    2 zktqffwb   zktqffwb          197 May 19  2018 .
+drwxr-xr-x    4 zktqffwb   zktqffwb          335 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         1546 May 19  2018 VTCreateEntityTask.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb        14062 May 20  2018 VTCreateEventTask.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         5695 May 20  2018 VTCreateTodoTask.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         5449 May 20  2018 VTEmailTask.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         1197 May 19  2018 VTEntityMethodTask.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         1753 May 20  2018 VTSMSTask.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         4713 May 20  2018 VTUpdateFieldsTask.tpl

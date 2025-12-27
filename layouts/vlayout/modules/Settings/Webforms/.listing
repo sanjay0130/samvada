@@ -1,0 +1,8 @@
+drwxr-xr-x    3 zktqffwb   zktqffwb          139 May 19  2018 .
+drwxr-xr-x   25 zktqffwb   zktqffwb         4096 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb          898 May 20  2018 DetailView.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb          885 May 20  2018 EditView.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         3110 May 20  2018 FieldsDetailView.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         6873 May 20  2018 FieldsEditView.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         8224 May 20  2018 ShowForm.tpl
+drwxr-xr-x    2 zktqffwb   zktqffwb           69 May 19  2018 resources

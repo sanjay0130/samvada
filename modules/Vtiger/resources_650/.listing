@@ -1,0 +1,6 @@
+drwxr-xr-x    3 zktqffwb   zktqffwb           83 May 19  2018 .
+drwxr-xr-x   10 zktqffwb   zktqffwb          208 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         1396 May 19  2018 BaseList.js
+-rw-r--r--    1 zktqffwb   zktqffwb        11987 May 20  2018 Field.js
+-rw-r--r--    1 zktqffwb   zktqffwb         6302 May 19  2018 FindDuplicates.js
+drwxr-xr-x    2 zktqffwb   zktqffwb          131 May 19  2018 validator

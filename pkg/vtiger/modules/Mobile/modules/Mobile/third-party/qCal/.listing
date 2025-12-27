@@ -1,0 +1,9 @@
+drwxr-xr-x    3 zktqffwb   zktqffwb          113 May 19  2018 .
+drwxr-xr-x    3 zktqffwb   zktqffwb           18 May 19  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb          522 May 19  2018 CHANGES
+-rw-r--r--    1 zktqffwb   zktqffwb         7639 May 19  2018 LICENSE
+-rw-r--r--    1 zktqffwb   zktqffwb         1213 May 19  2018 README
+-rw-r--r--    1 zktqffwb   zktqffwb           11 May 19  2018 VERSION
+-rw-r--r--    1 zktqffwb   zktqffwb          361 May 19  2018 autoload.php
+drwxr-xr-x    9 zktqffwb   zktqffwb          322 May 19  2018 qCal
+-rw-r--r--    1 zktqffwb   zktqffwb          123 May 19  2018 qCal.php

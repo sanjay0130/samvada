@@ -1,0 +1,71 @@
+drwxr-xr-x    2 zktqffwb   zktqffwb         4096 May 21  2018 .
+drwxr-xr-x   15 zktqffwb   zktqffwb         4096 May 21  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb       584396 Jul  6  2014 DejaVuSans-Bold.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       524624 Jul  6  2014 DejaVuSans-BoldOblique.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       329444 Jul  6  2014 DejaVuSans-ExtraLight.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       524396 Jul  6  2014 DejaVuSans-Oblique.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       633604 Jul  6  2014 DejaVuSans.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       545712 Jul  6  2014 DejaVuSansCondensed-Bold.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       493756 Jul  6  2014 DejaVuSansCondensed-BoldOblique.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       489032 Jul  6  2014 DejaVuSansCondensed-Oblique.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       555944 Jul  6  2014 DejaVuSansCondensed.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       302868 Jul  6  2014 DejaVuSansMono-Bold.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       224160 Jul  6  2014 DejaVuSansMono-BoldOblique.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       230244 Jul  6  2014 DejaVuSansMono-Oblique.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       322524 Jul  6  2014 DejaVuSansMono.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       307596 Jul  6  2014 DejaVuSerif-Bold.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       295360 Jul  6  2014 DejaVuSerif-BoldItalic.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       303004 Jul  6  2014 DejaVuSerif-Italic.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       330052 Jul  6  2014 DejaVuSerif.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       283140 Jul  6  2014 DejaVuSerifCondensed-Bold.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       294584 Jul  6  2014 DejaVuSerifCondensed-BoldItalic.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       302444 Jul  6  2014 DejaVuSerifCondensed-Italic.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       296976 Jul  6  2014 DejaVuSerifCondensed.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb         4916 Jul  6  2014 DejaVuinfo.txt
+-rw-r--r--    1 zktqffwb   zktqffwb         4422 Jul  6  2014 GNUFreeFontinfo.txt
+-rw-r--r--    1 zktqffwb   zktqffwb        57796 Jul  6  2014 Garuda-Bold.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb        57460 Jul  6  2014 Garuda-BoldOblique.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb        57412 Jul  6  2014 Garuda-Oblique.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb        57324 Jul  6  2014 Garuda.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       323980 Jul  6  2014 Lucida.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb        59636 Jul  6  2014 Lucidai.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb        77420 Jul  6  2014 Norasi-Bold.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb        78280 Jul  6  2014 Norasi-BoldOblique.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb        79836 Jul  6  2014 Norasi-Oblique.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       103412 Jul  6  2014 Norasi.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb        17989 Jul  6  2014 Thai Fonts License.txt
+-rw-r--r--    1 zktqffwb   zktqffwb      1144764 Jul  6  2014 XB Riyaz.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb      1159192 Jul  6  2014 XB RiyazBd.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb      1159500 Jul  6  2014 XB RiyazBdIt.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb      1131668 Jul  6  2014 XB RiyazIt.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb      1389628 Jul  6  2014 XB Zar Bd.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb      1366172 Jul  6  2014 XB Zar BdIt.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb      1361580 Jul  6  2014 XB Zar It.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb      1397368 Jul  6  2014 XB Zar.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb         4394 Jul  6  2014 XW Zar Font Info.txt
+-rw-r--r--    1 zktqffwb   zktqffwb       127596 Jul  6  2014 comic.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       111476 Jul  6  2014 comicbd.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       155068 Jul  6  2014 georgia.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       141032 Jul  6  2014 georgiab.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       157388 Jul  6  2014 georgiai.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       159736 Jul  6  2014 georgiaz.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       235632 Jul  6  2014 ind_bn_1_001.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       257872 Jul  6  2014 ind_gu_1_001.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       107216 Jul  6  2014 ind_hi_1_001.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       226916 Jul  6  2014 ind_kn_1_001.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       115804 Jul  6  2014 ind_ml_1_001.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       162552 Jul  6  2014 ind_or_1_001.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb        57864 Jul  6  2014 ind_pa_1_001.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb        85328 Jul  6  2014 ind_ta_1_001.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       124248 Jul  6  2014 ind_te_1_001.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb        23112 Jul  6  2014 ocrb10.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb         3421 Jul  6  2014 ocrbinfo.txt
+-rw-r--r--    1 zktqffwb   zktqffwb       379588 Jul  6  2014 tahoma.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       352020 Jul  6  2014 tahomabd.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       136172 Jul  6  2014 trebuc.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       126376 Jul  6  2014 trebucbd.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       133716 Jul  6  2014 trebucbi.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       171792 Jul  6  2014 verdana.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       137616 Jul  6  2014 verdanab.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       155076 Jul  6  2014 verdanai.ttf
+-rw-r--r--    1 zktqffwb   zktqffwb       154800 Jul  6  2014 verdanaz.ttf

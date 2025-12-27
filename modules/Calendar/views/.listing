@@ -1,0 +1,16 @@
+drwxr-xr-x    2 zktqffwb   zktqffwb         4096 May 20  2018 .
+drwxr-xr-x    8 zktqffwb   zktqffwb         4096 May 19  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         2322 May 20  2018 ActivityTypeViews.php
+-rw-r--r--    1 zktqffwb   zktqffwb         4848 May 20  2018 Calendar.php
+-rw-r--r--    1 zktqffwb   zktqffwb         7634 May 20  2018 Detail.php
+-rw-r--r--    1 zktqffwb   zktqffwb         8939 May 20  2018 Edit.php
+-rw-r--r--    1 zktqffwb   zktqffwb          591 May 20  2018 Export.php
+-rw-r--r--    1 zktqffwb   zktqffwb         5836 May 20  2018 Import.php
+-rw-r--r--    1 zktqffwb   zktqffwb         4759 May 20  2018 QuickCreateAjax.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1779 May 20  2018 QuickCreateFollowupAjax.php
+-rw-r--r--    1 zktqffwb   zktqffwb          840 May 20  2018 RecurringDeleteCheck.php
+-rw-r--r--    1 zktqffwb   zktqffwb          836 May 20  2018 RecurringEditCheck.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1397 May 20  2018 SharedCalendar.php
+-rw-r--r--    1 zktqffwb   zktqffwb         7898 May 20  2018 TaskManagement.php
+-rw-r--r--    1 zktqffwb   zktqffwb         2483 May 20  2018 UserCalendarViews.php
+-rw-r--r--    1 zktqffwb   zktqffwb         2146 May 20  2018 ViewTypes.php

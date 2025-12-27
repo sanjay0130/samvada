@@ -1,0 +1,16 @@
+drwxr-xr-x    2 zktqffwb   zktqffwb         4096 May 20  2018 .
+drwxr-xr-x   12 zktqffwb   zktqffwb         4096 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         2161 May 20  2018 datadict-access.inc.php
+-rw-r--r--    1 zktqffwb   zktqffwb         4088 May 20  2018 datadict-db2.inc.php
+-rw-r--r--    1 zktqffwb   zktqffwb         3873 May 20  2018 datadict-firebird.inc.php
+-rw-r--r--    1 zktqffwb   zktqffwb         2644 May 20  2018 datadict-generic.inc.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1522 May 20  2018 datadict-ibase.inc.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1894 May 20  2018 datadict-informix.inc.php
+-rw-r--r--    1 zktqffwb   zktqffwb         7497 May 20  2018 datadict-mssql.inc.php
+-rw-r--r--    1 zktqffwb   zktqffwb        10019 May 20  2018 datadict-mssqlnative.inc.php
+-rw-r--r--    1 zktqffwb   zktqffwb         4713 May 20  2018 datadict-mysql.inc.php
+-rw-r--r--    1 zktqffwb   zktqffwb         7689 May 20  2018 datadict-oci8.inc.php
+-rw-r--r--    1 zktqffwb   zktqffwb        15931 May 20  2018 datadict-postgres.inc.php
+-rw-r--r--    1 zktqffwb   zktqffwb         3324 May 20  2018 datadict-sapdb.inc.php
+-rw-r--r--    1 zktqffwb   zktqffwb         2756 May 20  2018 datadict-sqlite.inc.php
+-rw-r--r--    1 zktqffwb   zktqffwb         5882 May 20  2018 datadict-sybase.inc.php

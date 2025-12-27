@@ -1,0 +1,17 @@
+drwxr-xr-x    4 zktqffwb   zktqffwb         4096 May 20  2018 .
+drwxr-xr-x   20 zktqffwb   zktqffwb         4096 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb        42810 May 20  2018 CHANGELOG.txt
+-rw-r--r--    1 zktqffwb   zktqffwb         4590 May 20  2018 CONTRIBUTING.txt
+-rw-r--r--    1 zktqffwb   zktqffwb         1053 May 20  2018 LICENSE.txt
+-rw-r--r--    1 zktqffwb   zktqffwb          979 May 20  2018 fullcalendar-bootstrap.css
+-rw-r--r--    1 zktqffwb   zktqffwb        30924 May 20  2018 fullcalendar.css
+-rw-r--r--    1 zktqffwb   zktqffwb       394028 May 20  2018 fullcalendar.js
+-rw-r--r--    1 zktqffwb   zktqffwb        15251 May 20  2018 fullcalendar.min.css
+-rw-r--r--    1 zktqffwb   zktqffwb       131347 May 20  2018 fullcalendar.min.js
+-rw-r--r--    1 zktqffwb   zktqffwb         5565 May 20  2018 fullcalendar.print.css
+-rw-r--r--    1 zktqffwb   zktqffwb         1900 May 20  2018 fullcalendar.print.min.css
+-rw-r--r--    1 zktqffwb   zktqffwb         5751 May 20  2018 gcal.js
+-rw-r--r--    1 zktqffwb   zktqffwb         2185 May 20  2018 gcal.min.js
+drwxr-xr-x    3 zktqffwb   zktqffwb           89 May 20  2018 lib
+drwxr-xr-x    2 zktqffwb   zktqffwb         4096 May 20  2018 locale
+-rw-r--r--    1 zktqffwb   zktqffwb       157310 May 20  2018 locale-all.js

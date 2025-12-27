@@ -1,0 +1,11 @@
+drwxr-xr-x    4 zktqffwb   zktqffwb          253 May 20  2018 .
+drwxr-xr-x   43 zktqffwb   zktqffwb         4096 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb          665 May 20  2018 DetailViewFullContents.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         5856 May 20  2018 DetailViewHeaderTitle.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb          691 May 20  2018 DetailViewSummaryContents.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb          671 May 20  2018 ModuleSummaryView.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb          719 May 20  2018 OverlayEditView.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb          721 May 20  2018 PopupContents.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         5506 May 20  2018 SummaryViewWidgets.tpl
+drwxr-xr-x    2 zktqffwb   zktqffwb           69 May 20  2018 resources
+drwxr-xr-x    2 zktqffwb   zktqffwb           22 May 20  2018 uitypes

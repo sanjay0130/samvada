@@ -1,0 +1,17 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_payments</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_payments` (`paymentid` int(11), payment_no VARCHAR(100) default NULL, `reference_number` varchar(50) default NULL ,`payment_method` varchar(100) default NULL ,`accountid` int(100) default NULL ,`contactid` int(100) default NULL, `currency` varchar(50) default NULL ,`amount` decimal(19,5) default NULL ,`surcharge` decimal(19,5) default NULL,`date_scheduled` date default NULL ,`date_paid` date default NULL ,`payment_status` varchar(100) default NULL,`tran_status` varchar(100) default NULL ,`invoiceid` int(100) default NULL ,`salesorderid` int(100) default NULL,PRIMARY KEY (`paymentid`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_paymentscf</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_paymentscf` (`paymentid` int(11) NOT NULL, PRIMARY KEY (`paymentid`)) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_borupayments_user_field</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_borupayments_user_field` ( `recordid` int(25) NOT NULL, `userid` int(25) NOT NULL, `starred` varchar(100) DEFAULT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+	</tables>
+</schema>

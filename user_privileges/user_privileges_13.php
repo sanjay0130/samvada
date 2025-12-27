@@ -1,0 +1,9 @@
+<?php
+
+
+//This is the access privilege file
+$is_admin=true;
+
+$user_info=array('user_name'=>'cassandra','is_admin'=>'on','user_password'=>'$1$ca000000$TA8Z3XFXaJ3JYxUfrR54b0','confirm_password'=>'$1$ca000000$TA8Z3XFXaJ3JYxUfrR54b0','first_name'=>'Cassandra','last_name'=>'Zeba','roleid'=>'H2','email1'=>'cassandra@sleepwm.com','status'=>'Inactive','activity_view'=>'Today','lead_view'=>'Today','hour_format'=>'12','end_hour'=>'','start_hour'=>'00:00','title'=>'','phone_work'=>'','department'=>'','phone_mobile'=>'','reports_to_id'=>'','phone_other'=>'','email2'=>'','phone_fax'=>'','secondaryemail'=>'','phone_home'=>'','date_format'=>'mm-dd-yyyy','signature'=>'','description'=>'','address_street'=>'20552 96A Avenue','address_city'=>'Langley','address_state'=>'BC','address_postalcode'=>'V1M 2H3','address_country'=>'Canada','accesskey'=>'k5YtcgTqt6kMSxiW','time_zone'=>'UTC','currency_id'=>'1','currency_grouping_pattern'=>'123,456,789','currency_decimal_separator'=>'.','currency_grouping_separator'=>',','currency_symbol_placement'=>'$1.0','imagename'=>'','internal_mailer'=>'0','theme'=>'softed','language'=>'en_us','reminder_interval'=>'','no_of_currency_decimals'=>'2','truncate_trailing_zeros'=>'0','dayoftheweek'=>'Monday','callduration'=>'5','othereventduration'=>'5','calendarsharedtype'=>'public','default_record_view'=>'Summary','leftpanelhide'=>'0','rowheight'=>'medium','defaulteventstatus'=>'Planned','defaultactivitytype'=>'Call','hidecompletedevents'=>'','is_owner'=>'1','defaultcalendarview'=>'MyCalendar','phone_crm_extension'=>'','currency_name'=>'Canada, Dollars','currency_code'=>'CAD','currency_symbol'=>'&#36;','conv_rate'=>'1.00000','record_id'=>'','record_module'=>'','id'=>'13');
+
+?>

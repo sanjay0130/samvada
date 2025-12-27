@@ -1,0 +1,14 @@
+drwxr-xr-x    6 zktqffwb   zktqffwb          211 May 21  2018 .
+drwxr-xr-x    5 zktqffwb   zktqffwb           82 May 21  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb        38874 May  2  2018 CHANGES.md
+-rw-r--r--    1 zktqffwb   zktqffwb        68193 May  2  2018 LICENSE.md
+-rw-r--r--    1 zktqffwb   zktqffwb         1344 May  2  2018 README.md
+drwxr-xr-x    2 zktqffwb   zktqffwb           23 May 20  2018 adapters
+-rw-r--r--    1 zktqffwb   zktqffwb         2915 May  2  2018 build-config.js
+-rw-r--r--    1 zktqffwb   zktqffwb       507409 May  2  2018 ckeditor.js
+-rw-r--r--    1 zktqffwb   zktqffwb         3099 May  2  2018 config.js
+-rw-r--r--    1 zktqffwb   zktqffwb         1581 May  2  2018 contents.css
+drwxr-xr-x    2 zktqffwb   zktqffwb         4096 May 21  2018 lang
+drwxr-xr-x   28 zktqffwb   zktqffwb         4096 May 21  2018 plugins
+drwxr-xr-x    4 zktqffwb   zktqffwb           37 May 21  2018 skins
+-rw-r--r--    1 zktqffwb   zktqffwb         3594 May  2  2018 styles.js

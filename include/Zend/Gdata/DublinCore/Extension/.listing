@@ -1,0 +1,12 @@
+drwxr-xr-x    2 zktqffwb   zktqffwb          199 May 19  2018 .
+drwxr-xr-x    3 zktqffwb   zktqffwb           23 May 19  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         1784 May 19  2018 Creator.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1840 May 19  2018 Date.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1742 May 19  2018 Description.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1794 May 19  2018 Format.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1818 May 19  2018 Identifier.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1732 May 19  2018 Language.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1792 May 19  2018 Publisher.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1784 May 19  2018 Rights.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1722 May 19  2018 Subject.php
+-rw-r--r--    1 zktqffwb   zktqffwb         1724 May 19  2018 Title.php

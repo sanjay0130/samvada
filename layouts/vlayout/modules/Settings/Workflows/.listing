@@ -1,0 +1,16 @@
+drwxr-xr-x    4 zktqffwb   zktqffwb          335 May 20  2018 .
+drwxr-xr-x   25 zktqffwb   zktqffwb         4096 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         3992 May 20  2018 AdvanceFilterCondition.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         7357 May 19  2018 CreateEntity.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         1986 May 20  2018 EditHeader.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         4659 May 20  2018 EditTask.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         4373 May 20  2018 FieldExpressions.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         6971 May 20  2018 LineItemsGroupTemplate.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         7035 May 20  2018 LineItemsIndividualTemplate.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         3316 May 20  2018 ListViewHeader.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb        15713 May 20  2018 Step1.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         3870 May 20  2018 Step2.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         2081 May 20  2018 Step3.tpl
+drwxr-xr-x    2 zktqffwb   zktqffwb          197 May 19  2018 Tasks
+-rw-r--r--    1 zktqffwb   zktqffwb         2020 May 19  2018 TasksList.tpl
+drwxr-xr-x    3 zktqffwb   zktqffwb          125 May 19  2018 resources

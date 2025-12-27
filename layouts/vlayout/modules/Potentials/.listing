@@ -1,0 +1,8 @@
+drwxr-xr-x    4 zktqffwb   zktqffwb          170 May 19  2018 .
+drwxr-xr-x   42 zktqffwb   zktqffwb         4096 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         1533 May 19  2018 DetailViewHeaderTitle.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb          632 May 19  2018 DetailViewSummaryContents.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb          659 May 19  2018 ModuleSummaryView.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         6678 May 19  2018 SummaryViewWidgets.tpl
+drwxr-xr-x    2 zktqffwb   zktqffwb          246 May 19  2018 dashboards
+drwxr-xr-x    2 zktqffwb   zktqffwb           38 May 20  2018 resources

@@ -1,0 +1,9 @@
+drwxr-xr-x    2 zktqffwb   zktqffwb          215 May 19  2018 .
+drwxr-xr-x    7 zktqffwb   zktqffwb         4096 May 19  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb        10791 May 19  2018 bestFitClass.php
+-rw-r--r--    1 zktqffwb   zktqffwb         4247 May 19  2018 exponentialBestFitClass.php
+-rw-r--r--    1 zktqffwb   zktqffwb         3366 May 19  2018 linearBestFitClass.php
+-rw-r--r--    1 zktqffwb   zktqffwb         3608 May 19  2018 logarithmicBestFitClass.php
+-rw-r--r--    1 zktqffwb   zktqffwb         6239 May 19  2018 polynomialBestFitClass.php
+-rw-r--r--    1 zktqffwb   zktqffwb         4080 May 19  2018 powerBestFitClass.php
+-rw-r--r--    1 zktqffwb   zktqffwb         5638 May 19  2018 trendClass.php

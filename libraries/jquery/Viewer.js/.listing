@@ -1,0 +1,15 @@
+drwxr-xr-x    3 zktqffwb   zktqffwb          279 May 20  2018 .
+drwxr-xr-x   33 zktqffwb   zktqffwb         4096 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         5342 May 20  2018 ODFViewerPlugin.js
+-rw-r--r--    1 zktqffwb   zktqffwb          823 May 20  2018 PDFViewerPlugin.css
+-rw-r--r--    1 zktqffwb   zktqffwb        10107 May 20  2018 PDFViewerPlugin.js
+-rw-r--r--    1 zktqffwb   zktqffwb         3582 May 20  2018 PluginLoader.js
+-rw-r--r--    1 zktqffwb   zktqffwb        13045 May 20  2018 TextLayerBuilder.js
+-rw-r--r--    1 zktqffwb   zktqffwb         1092 May 20  2018 example.local.css
+drwxr-xr-x    2 zktqffwb   zktqffwb          300 May 20  2018 images
+-rw-r--r--    1 zktqffwb   zktqffwb         4420 May 20  2018 index.html
+-rw-r--r--    1 zktqffwb   zktqffwb       225758 May 20  2018 pdf.js
+-rw-r--r--    1 zktqffwb   zktqffwb      1508351 May 20  2018 pdf.worker.js
+-rw-r--r--    1 zktqffwb   zktqffwb        20413 May 20  2018 viewer.css
+-rw-r--r--    1 zktqffwb   zktqffwb         7633 May 20  2018 viewer.js
+-rw-r--r--    1 zktqffwb   zktqffwb       319014 May 20  2018 webodf.js

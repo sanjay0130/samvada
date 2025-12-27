@@ -1,0 +1,8 @@
+drwxr-xr-x    5 zktqffwb   zktqffwb           98 May 20  2018 .
+drwxr-xr-x   42 zktqffwb   zktqffwb         4096 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         1476 May 20  2018 LICENSE.md
+-rw-r--r--    1 zktqffwb   zktqffwb          970 May 20  2018 README.md
+drwxr-xr-x    2 zktqffwb   zktqffwb           43 May 19  2018 dialogs
+drwxr-xr-x    3 zktqffwb   zktqffwb           36 May 20  2018 icons
+drwxr-xr-x    2 zktqffwb   zktqffwb         4096 May 20  2018 lang
+-rw-r--r--    1 zktqffwb   zktqffwb        30139 May 20  2018 plugin.js

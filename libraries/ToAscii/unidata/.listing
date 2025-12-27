@@ -1,0 +1,8 @@
+drwxr-xr-x    2 zktqffwb   zktqffwb          178 May 20  2018 .
+drwxr-xr-x    4 zktqffwb   zktqffwb           74 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb        19292 May 20  2018 canonicalComposition.ser
+-rw-r--r--    1 zktqffwb   zktqffwb        42942 May 20  2018 canonicalDecomposition.ser
+-rw-r--r--    1 zktqffwb   zktqffwb        10058 May 20  2018 combiningClass.ser
+-rw-r--r--    1 zktqffwb   zktqffwb        73962 May 20  2018 compatibilityDecomposition.ser
+-rw-r--r--    1 zktqffwb   zktqffwb        19955 May 20  2018 lowerCase.ser
+-rw-r--r--    1 zktqffwb   zktqffwb        20098 May 20  2018 upperCase.ser

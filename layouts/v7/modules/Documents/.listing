@@ -1,0 +1,15 @@
+drwxr-xr-x    4 zktqffwb   zktqffwb          333 May 20  2018 .
+drwxr-xr-x   43 zktqffwb   zktqffwb         4096 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         2311 May 20  2018 AddFolder.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         8572 May 20  2018 CreateDocument.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         1914 May 20  2018 DetailViewPreProcess.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb        19440 May 20  2018 DocumentsRelatedList.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         5167 May 20  2018 FilePreview.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         3219 May 20  2018 ListViewRecordActions.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         6948 May 20  2018 ModuleHeader.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         3074 May 20  2018 MoveDocuments.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb          696 May 20  2018 OverlayDetailView.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         1590 May 20  2018 QuickCreate.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         9363 May 20  2018 UploadDocument.tpl
+drwxr-xr-x    2 zktqffwb   zktqffwb           79 May 20  2018 partials
+drwxr-xr-x    2 zktqffwb   zktqffwb           73 May 20  2018 resources

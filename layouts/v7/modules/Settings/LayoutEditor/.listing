@@ -1,0 +1,10 @@
+drwxr-xr-x    3 zktqffwb   zktqffwb          186 May 20  2018 .
+drwxr-xr-x   26 zktqffwb   zktqffwb         4096 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         5105 May 20  2018 DefaultValueUi.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         4118 May 20  2018 DuplicateHandling.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb        13636 May 20  2018 FieldCreate.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb        39598 May 20  2018 FieldsList.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         3489 May 20  2018 Index.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb        10030 May 20  2018 RelatedList.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb        16106 May 20  2018 RelationAdd.tpl
+drwxr-xr-x    2 zktqffwb   zktqffwb           29 May 20  2018 resources

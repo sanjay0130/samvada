@@ -1,0 +1,13 @@
+drwxr-xr-x    2 zktqffwb   zktqffwb          254 May 20  2018 .
+drwxr-xr-x    3 zktqffwb   zktqffwb         4096 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         3222 May 20  2018 AnnouncementEdit.js
+-rw-r--r--    1 zktqffwb   zktqffwb         4199 May 20  2018 CompanyDetails.js
+-rw-r--r--    1 zktqffwb   zktqffwb         3767 May 20  2018 ConfigEditorDetail.js
+-rw-r--r--    1 zktqffwb   zktqffwb         6051 May 20  2018 CustomRecordNumbering.js
+-rw-r--r--    1 zktqffwb   zktqffwb         1411 May 20  2018 Detail.js
+-rw-r--r--    1 zktqffwb   zktqffwb          829 May 20  2018 Edit.js
+-rw-r--r--    1 zktqffwb   zktqffwb         8257 May 20  2018 Index.js
+-rw-r--r--    1 zktqffwb   zktqffwb         2364 May 20  2018 List.js
+-rw-r--r--    1 zktqffwb   zktqffwb         6717 May 20  2018 OutgoingServer.js
+-rw-r--r--    1 zktqffwb   zktqffwb        38347 May 20  2018 Tax.js
+-rw-r--r--    1 zktqffwb   zktqffwb         4765 May 20  2018 TermsAndConditionsEdit.js

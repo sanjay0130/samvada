@@ -1,0 +1,12 @@
+drwxr-xr-x    2 zktqffwb   zktqffwb          221 May 20  2018 .
+drwxr-xr-x   20 zktqffwb   zktqffwb         4096 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         1075 May 20  2018 LICENSE.txt
+-rw-r--r--    1 zktqffwb   zktqffwb         8276 May 20  2018 README.md
+-rw-r--r--    1 zktqffwb   zktqffwb          700 May 20  2018 bower.json
+-rw-r--r--    1 zktqffwb   zktqffwb         5834 May 20  2018 daterangepicker.css
+-rw-r--r--    1 zktqffwb   zktqffwb         6110 May 20  2018 demo.js
+-rw-r--r--    1 zktqffwb   zktqffwb        17508 May 20  2018 index.html
+-rw-r--r--    1 zktqffwb   zktqffwb        95931 May 20  2018 jquery-1.11.2.min.js
+-rw-r--r--    1 zktqffwb   zktqffwb        49354 May 20  2018 jquery.daterangepicker.js
+-rw-r--r--    1 zktqffwb   zktqffwb        34171 May 20  2018 moment.min.js
+-rw-r--r--    1 zktqffwb   zktqffwb        69704 May 20  2018 preview.jpg

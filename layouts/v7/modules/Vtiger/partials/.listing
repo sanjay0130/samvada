@@ -1,0 +1,10 @@
+drwxr-xr-x    2 zktqffwb   zktqffwb          199 May 20  2018 .
+drwxr-xr-x    6 zktqffwb   zktqffwb         8192 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         5045 May 20  2018 EditViewContents.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         1210 May 20  2018 Menubar.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         3606 May 20  2018 RelatedListHeader.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         3792 May 20  2018 Sidebar.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         6471 May 20  2018 SidebarAppMenu.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb        13773 May 20  2018 SidebarEssentials.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         1053 May 20  2018 SidebarHeader.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb        11251 May 20  2018 Topbar.tpl

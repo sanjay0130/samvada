@@ -1,0 +1,8 @@
+drwxr-xr-x    2 zktqffwb   zktqffwb          104 May 19  2018 .
+drwxr-xr-x   20 zktqffwb   zktqffwb         4096 May 19  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb         1436 May 19  2018 ftp.php
+-rw-r--r--    1 zktqffwb   zktqffwb          441 May 19  2018 http.php
+-rw-r--r--    1 zktqffwb   zktqffwb          206 May 19  2018 https.php
+-rw-r--r--    1 zktqffwb   zktqffwb          679 May 19  2018 mailto.php
+-rw-r--r--    1 zktqffwb   zktqffwb          499 May 19  2018 news.php
+-rw-r--r--    1 zktqffwb   zktqffwb          452 May 19  2018 nntp.php

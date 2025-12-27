@@ -1,0 +1,11 @@
+drwxr-xr-x    3 zktqffwb   zktqffwb          227 May 20  2018 .
+drwxr-xr-x   26 zktqffwb   zktqffwb         4096 May 20  2018 ..
+-rw-r--r--    1 zktqffwb   zktqffwb          725 May 20  2018 AssignValueToRole.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         3823 May 20  2018 CreateView.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         5280 May 20  2018 DeleteView.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         4653 May 20  2018 EditView.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         2167 May 20  2018 Index.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         1949 May 20  2018 ModulePickListDetail.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         1809 May 20  2018 PickListValueByRole.tpl
+-rw-r--r--    1 zktqffwb   zktqffwb         6684 May 20  2018 PickListValueDetail.tpl
+drwxr-xr-x    2 zktqffwb   zktqffwb           25 May 20  2018 resources
