@@ -1,0 +1,14 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>previewdocuments_settings</name>
+			<sql><![CDATA[CREATE TABLE `previewdocuments_settings` (
+				`option`  varchar(255) NULL ,
+				`value`  text NULL ,
+				PRIMARY KEY (`option`)
+				);
+			]]></sql>
+		</table>
+	</tables>
+</schema>

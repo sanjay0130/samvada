@@ -1,0 +1,26 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_salesapprovals</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_salesapprovals` (
+    `salesapprovalsid` int(11) NOT NULL DEFAULT '0',
+      `month` VARCHAR(128) DEFAULT NULL,
+    `paymentapproval` VARCHAR(5) DEFAULT NULL,
+    `advtapproved` VARCHAR(5) DEFAULT NULL,
+    `advtdesigned` VARCHAR(5) DEFAULT NULL,
+    `copy_delivered` VARCHAR(5) DEFAULT NULL,
+    `tabid` VARCHAR(32) DEFAULT NULL,
+    `salesorder` INT(19) DEFAULT NULL,
+      PRIMARY KEY (`salesapprovalsid`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_salesapprovalscf</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_salesapprovalscf` (
+  `vtiger_salesapprovalscf` int(11) NOT NULL,
+  PRIMARY KEY (`vtiger_salesapprovalscf`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>
